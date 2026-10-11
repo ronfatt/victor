@@ -1,0 +1,130 @@
+/**
+ * Mikhael Victor Official Website - Site Configuration
+ * 
+ * Centralized configuration for brand details, contact channels,
+ * WhatsApp messaging parameters, and pending verification notices.
+ */
+
+export interface SiteConfig {
+  brand: {
+    name: string;
+    englishTitle: string;
+    chineseTitle: string;
+    taglineEn: string;
+    taglineZh: string;
+    subtitleEn: string;
+    subtitleZh: string;
+    location: string;
+    locationZh: string;
+    experienceClaimEn: string;
+    experienceClaimZh: string;
+  };
+  contact: {
+    whatsappNumber: string; // Real number placeholder to be updated before launch
+    whatsappFormatted: string;
+    email: string;
+    phoneDisplay: string;
+    wechatId: string;
+    instagramHandle: string;
+    addressNoteEn: string;
+    addressNoteZh: string;
+  };
+  verificationStatus: {
+    isLive: boolean;
+    credentialsPendingVerification: boolean;
+    imagesPendingAuthorization: boolean;
+    pricingPendingConfirmation: boolean;
+  };
+  disclaimer: {
+    medicalEn: string;
+    medicalZh: string;
+  };
+}
+
+export const siteConfig: SiteConfig = {
+  brand: {
+    name: "Mikhael Victor",
+    englishTitle: "Mikhael Victor | Spiritual Guidance · Energy Wellness · Conscious Living",
+    chineseTitle: "Mikhael Victor 官方品牌网站 | 内在觉察 · 能量疗愈 · 灵性指引",
+    taglineEn: "Awaken Awareness. Restore Harmony. Transform Within.",
+    taglineZh: "回到内在，遇见更清晰的自己。",
+    subtitleEn: "Spiritual Guidance · Energy Wellness · Conscious Living",
+    subtitleZh: "灵性指引 · 能量疗愈 · 意识生活",
+    location: "Klang, Selangor, Malaysia",
+    locationZh: "马来西亚 · 雪兰莪州 · 巴生",
+    experienceClaimEn: "26+ Years of Practice & Study (Pending Formal Credential Verification)",
+    experienceClaimZh: "26+ 年修习与教学积累（资料验证中）",
+  },
+  contact: {
+    whatsappNumber: "60123456789", // Configurable placeholder (Country code + number without plus)
+    whatsappFormatted: "+60 12-345 6789 (待正式号替换)",
+    email: "consultation@mikhaelvictor.example.com",
+    phoneDisplay: "+60 12-345 6789",
+    wechatId: "MikhaelVictor_Official",
+    instagramHandle: "@mikhaelvictor.official",
+    addressNoteEn: "Private Consultation Studio, Klang, Selangor, Malaysia (Full address provided upon booking confirmation)",
+    addressNoteZh: "马来西亚雪兰莪州巴生私人咨询工作室（确切地址于确认预约后发送）",
+  },
+  verificationStatus: {
+    isLive: false,
+    credentialsPendingVerification: true,
+    imagesPendingAuthorization: true,
+    pricingPendingConfirmation: true,
+  },
+  disclaimer: {
+    medicalEn: "Disclaimer: Spiritual guidance, ALT Angelic Light Therapy, flower essences, and meditation practices are offered for personal reflection, spiritual exploration, and inner awareness. They do not constitute licensed medical diagnosis, psychotherapy, mental health treatment, or scientific therapies. Individuals experiencing physical or psychological symptoms should consult certified medical healthcare professionals.",
+    medicalZh: "郑重声明：本网站所呈现的灵性指引、ALT 天使源疗、天使花晶及静坐修习仅供个人内在探索、心性启发与生活觉察之用，绝不构成亦不替代注册医师的医学诊断、心理治疗或精神科医疗处方。如有任何生理或心理疾患，请务必寻求合规专业医疗人员的协助与治疗。",
+  },
+};
+
+/**
+ * Builds an interactive WhatsApp link with customized message
+ */
+export function buildWhatsAppLink(
+  serviceName?: string,
+  clientName?: string,
+  date?: string,
+  timeSlot?: string,
+  mode?: string,
+  isZh: boolean = true
+): string {
+  const base = `https://wa.me/${siteConfig.contact.whatsappNumber}`;
+  
+  if (isZh) {
+    let text = `您好 Mikhael Victor 团队，我想咨询预约`;
+    if (serviceName) {
+      text += `【${serviceName}】`;
+    } else {
+      text += `私人咨询服务`;
+    }
+    if (clientName && clientName.trim()) {
+      text += `（称呼：${clientName.trim()}）`;
+    }
+    if (mode) {
+      text += `，期望形式：${mode}`;
+    }
+    if (date || timeSlot) {
+      text += `，期望时间：${date || '近期空档'} ${timeSlot ? '· ' + timeSlot : ''}`;
+    }
+    text += `。请问近期有适合的空档吗？谢谢！`;
+    return `${base}?text=${encodeURIComponent(text)}`;
+  } else {
+    let text = `Hello Mikhael Victor team, I would like to inquire about booking`;
+    if (serviceName) {
+      text += ` [${serviceName}]`;
+    } else {
+      text += ` a private session`;
+    }
+    if (clientName && clientName.trim()) {
+      text += ` on behalf of ${clientName.trim()}`;
+    }
+    if (mode) {
+      text += ` [Format: ${mode}]`;
+    }
+    if (date || timeSlot) {
+      text += ` (Preferred schedule: ${date || 'Flexible'} ${timeSlot ? '· ' + timeSlot : ''})`;
+    }
+    text += `. Could you please advise on availability? Thank you!`;
+    return `${base}?text=${encodeURIComponent(text)}`;
+  }
+}
