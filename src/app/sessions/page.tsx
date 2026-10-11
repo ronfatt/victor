@@ -77,7 +77,7 @@ export default function SessionsPage() {
   };
 
   return (
-    <div className="py-16 sm:py-24 bg-[#FAF9F6] space-y-24 lg:space-y-32">
+    <div className="py-10 sm:py-20 lg:py-28 bg-[#FAF9F6] space-y-12 sm:space-y-20 lg:space-y-32">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">

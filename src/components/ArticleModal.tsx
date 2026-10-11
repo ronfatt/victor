@@ -31,12 +31,15 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="article-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#28252C]/60 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-[#28252C]/65 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white border border-[#E8E4DF] shadow-2xl p-6 sm:p-10 text-[#28252C]">
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-t-[32px] sm:rounded-2xl bg-white border-t sm:border border-[#E8E4DF] shadow-2xl p-6 sm:p-10 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:pb-10 text-[#28252C] animate-in slide-in-from-bottom duration-300 sm:duration-200">
+        {/* iOS Native Drag Pill for Mobile */}
+        <div className="w-12 h-1.5 bg-[#D8D2DC] rounded-full mx-auto mb-5 sm:hidden" />
+
         {/* Close Button */}
         <button
           type="button"

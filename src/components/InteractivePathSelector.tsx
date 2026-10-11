@@ -17,7 +17,7 @@ export function InteractivePathSelector() {
   const optionLetters = ['Option A', 'Option B', 'Option C', 'Option D', 'Option E'];
 
   return (
-    <section className="py-24 lg:py-32 bg-[#FAF9F6] border-y border-[#E8E3DD]/80 relative overflow-hidden">
+    <section className="py-12 sm:py-20 lg:py-32 bg-[#FAF9F6] border-y border-[#E8E3DD]/80 relative overflow-hidden">
       {/* Subtle Refraction Glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-gradient-to-r from-[#D5CEE0]/20 to-transparent blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-gradient-to-l from-[#B99C72]/10 to-transparent blur-3xl pointer-events-none" />
@@ -124,12 +124,12 @@ export function InteractivePathSelector() {
                   <span>{isZh ? "支持全球线上及巴生实体咨询" : "Online & In-person available"}</span>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2.5">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
                   <a
                     href={buildWhatsAppLink(currentOption.recommended, undefined, undefined, undefined, undefined, isZh)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-medium hover:bg-[#20bd5a] transition-all shadow-2xs"
+                    className="inline-flex items-center justify-center gap-1.5 px-5 py-3 sm:py-2.5 rounded-full bg-[#25D366] text-white text-xs font-medium hover:bg-[#20bd5a] active:scale-[0.98] transition-all shadow-2xs w-full sm:w-auto"
                   >
                     <MessageSquare className="w-3.5 h-3.5 fill-white" />
                     <span>{isZh ? "WhatsApp 快速私询" : "Ask on WhatsApp"}</span>
@@ -137,7 +137,7 @@ export function InteractivePathSelector() {
 
                   <Link
                     href={currentOption.link}
-                    className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-[#FAF9F6] border border-[#E8E3DD] text-[#2D233C] text-xs font-medium hover:bg-white transition-all"
+                    className="inline-flex items-center justify-center gap-1.5 px-5 py-3 sm:py-2.5 rounded-full bg-[#FAF9F6] border border-[#E8E3DD] text-[#2D233C] text-xs font-medium hover:bg-white active:scale-[0.98] transition-all w-full sm:w-auto"
                   >
                     <span>{currentOption.actionText}</span>
                     <ArrowRight className="w-3 h-3" />

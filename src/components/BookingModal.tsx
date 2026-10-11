@@ -112,12 +112,15 @@ export function BookingModal({ isOpen, onClose, defaultService }: BookingModalPr
       role="dialog"
       aria-modal="true"
       aria-labelledby="booking-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#242129]/75 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-[#242129]/75 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto rounded-[32px] bg-white border border-[#E8E3DD] shadow-[0_24px_70px_rgba(45,35,60,0.22)] p-6 sm:p-8 text-[#242129]">
+      <div className="relative w-full max-w-xl max-h-[90vh] sm:max-h-[92vh] overflow-y-auto rounded-t-[32px] sm:rounded-[32px] bg-white border-t sm:border border-[#E8E3DD] shadow-[0_24px_70px_rgba(45,35,60,0.22)] p-6 sm:p-8 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:pb-8 text-[#242129] animate-in slide-in-from-bottom duration-300 sm:duration-200">
+        {/* iOS Native Drag Pill for Mobile */}
+        <div className="w-12 h-1.5 bg-[#D8D2DC] rounded-full mx-auto mb-5 sm:hidden" />
+
         {/* Close Button */}
         <button
           type="button"

@@ -24,7 +24,8 @@ import {
   Flower2,
   Layers,
   SunMedium,
-  MessageSquare
+  MessageSquare,
+  Sparkles
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -46,19 +47,19 @@ export default function HomePage() {
           Generous whitespace, asymmetrical editorial layout,
           subtle lavender light refraction halo
          ======================================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#FAF9F6] to-[#F5F1EB] pt-16 pb-24 lg:pt-24 lg:pb-36 border-b border-[#E8E3DD]/80">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#FAF9F6] to-[#F5F1EB] pt-8 pb-14 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-36 border-b border-[#E8E3DD]/80">
         {/* Subtle Lavender & Champagne Light Refraction Caustics */}
         <div className="absolute top-1/4 right-[8%] w-[520px] h-[520px] rounded-full bg-gradient-to-br from-[#D5CEE0]/25 via-[#EBE5F0]/15 to-transparent blur-3xl pointer-events-none" />
         <div className="absolute top-12 left-[5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#D9C3A3]/20 via-[#FAF9F6]/10 to-transparent blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column: Architectural Typography & CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 space-y-7"
+              className="lg:col-span-7 space-y-6 sm:space-y-7"
             >
               {/* Refined Eyebrow */}
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-white/90 border border-[#E8E3DD] text-[10px] font-mono tracking-[0.22em] text-[#2D233C] uppercase shadow-2xs backdrop-blur-xs">
@@ -67,7 +68,7 @@ export default function HomePage() {
               </div>
 
               {/* Main Editorial Headline */}
-              <h1 className="font-serif text-4xl sm:text-6xl lg:text-[68px] text-[#242129] font-normal leading-[1.12] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-6xl lg:text-[68px] text-[#242129] font-normal leading-[1.14] tracking-tight">
                 {t.hero.headlineLine1}
                 <br />
                 <span className="italic text-[#2D233C] font-light">
@@ -81,32 +82,55 @@ export default function HomePage() {
               </p>
 
               {/* Lead Paragraph */}
-              <p className="text-sm sm:text-base text-[#58535F] leading-relaxed max-w-xl font-sans font-normal">
+              <p className="text-xs sm:text-base text-[#58535F] leading-relaxed max-w-xl font-sans font-normal">
                 {t.hero.intro}
               </p>
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
+              {/* Action Buttons - App Native Full Width on Mobile */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <button
                   type="button"
                   onClick={() => openBookingWithService()}
-                  className="px-8 py-4 rounded-full bg-[#2D233C] text-white text-xs sm:text-[13px] font-medium tracking-wide shadow-md hover:bg-[#443659] hover:shadow-lg transition-all duration-300 flex items-center gap-2.5"
+                  className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-[#2D233C] text-white text-xs sm:text-[13px] font-medium tracking-wide shadow-md hover:bg-[#443659] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2.5"
                 >
                   <Calendar className="w-4 h-4 text-[#D9C3A3]" />
                   <span>{t.cta.bookSession}</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />
                 </button>
 
-                <Link
-                  href="/sessions"
-                  className="px-7 py-4 rounded-full bg-white border border-[#E8E3DD] text-[#2D233C] text-xs sm:text-[13px] font-medium hover:border-[#ADA0BE] hover:bg-[#FAF9F6] transition-all duration-300"
+                <a
+                  href={buildWhatsAppLink(undefined, undefined, undefined, undefined, undefined, isZh)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full bg-[#25D366] text-white text-xs sm:text-[13px] font-medium shadow-sm hover:bg-[#20bd5a] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  {t.cta.exploreServices}
-                </Link>
+                  <MessageSquare className="w-4 h-4 fill-white" />
+                  <span>{isZh ? "WhatsApp 快速私询" : "Direct WhatsApp"}</span>
+                </a>
+              </div>
+
+              {/* Mobile Quick-Jump Discipline Chips (App Carousel Style) */}
+              <div className="pt-1 -mx-4 px-4 overflow-x-auto no-scrollbar flex items-center gap-2 lg:hidden select-none">
+                {[
+                  { label: isZh ? "灵性咨询" : "Sessions", href: "/sessions", icon: Sparkles },
+                  { label: isZh ? "ALT 天使源疗" : "ALT Light", href: "/alt-therapy", icon: SunMedium },
+                  { label: isZh ? "天使花晶" : "Essences", href: "/aura-prema", icon: Flower2 },
+                  { label: isZh ? "静坐六阶" : "Meditation", href: "/meditation", icon: Layers },
+                  { label: isZh ? "空间风水" : "Feng Shui", href: "/access-chi", icon: MapPin },
+                ].map((chip, idx) => (
+                  <Link
+                    key={idx}
+                    href={chip.href}
+                    className="flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-[#E8E3DD] text-[11px] font-sans text-[#2D233C] active:scale-95 transition-transform shadow-2xs"
+                  >
+                    <chip.icon className="w-3.5 h-3.5 text-[#B99C72]" />
+                    <span>{chip.label}</span>
+                  </Link>
+                ))}
               </div>
 
               {/* Geographical Anchor */}
-              <div className="pt-2 flex items-center gap-2 text-xs text-[#8E8795] font-mono">
+              <div className="pt-1 flex items-center gap-2 text-xs text-[#8E8795] font-mono">
                 <MapPin className="w-3.5 h-3.5 text-[#B99C72] flex-shrink-0" />
                 <span>{t.hero.locationNote}</span>
               </div>
@@ -211,7 +235,7 @@ export default function HomePage() {
           SECTION 3: ABOUT PREVIEW (EDITORIAL SPREAD)
           Unequal magazine columns, authentic typography
          ======================================================== */}
-      <section className="py-24 lg:py-36 bg-[#FAF9F6]">
+      <section className="py-12 sm:py-20 lg:py-36 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Visual Left: Sanctuary Plate */}
@@ -282,7 +306,7 @@ export default function HomePage() {
           - 2 Primary Hero Cards (Guidance & ALT)
           - 3 Secondary Discipline Cards (Aura Prema, Meditation, Access Chi)
          ======================================================== */}
-      <section className="py-24 lg:py-36 bg-white border-t border-[#E8E3DD]">
+      <section className="py-12 sm:py-20 lg:py-36 bg-white border-t border-[#E8E3DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-2xl">
@@ -446,7 +470,7 @@ export default function HomePage() {
           SECTION 6: PRIVATE SESSIONS (EDITORIAL CONSULTATION SUITE)
           RM50, RM200, RM444 + 3-session inquiry
          ======================================================== */}
-      <section className="py-24 lg:py-36 bg-[#FAF9F6] border-t border-[#E8E3DD]">
+      <section className="py-12 sm:py-20 lg:py-36 bg-[#FAF9F6] border-t border-[#E8E3DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
@@ -551,7 +575,7 @@ export default function HomePage() {
                   <button
                     type="button"
                     onClick={() => openBookingWithService(`${plan.name} (${plan.price})`)}
-                    className={`w-full py-4 rounded-full text-xs font-medium tracking-wide transition-all shadow-sm ${
+                    className={`w-full py-3.5 sm:py-4 rounded-full text-xs font-medium tracking-wide active:scale-[0.98] transition-all shadow-sm ${
                       plan.isFeatured
                         ? "bg-[#2D233C] text-white hover:bg-[#443659]"
                         : "bg-[#FAF9F6] border border-[#E8E3DD] text-[#2D233C] hover:bg-[#2D233C] hover:text-white"
@@ -560,8 +584,25 @@ export default function HomePage() {
                     {plan.buttonLabel}
                   </button>
 
+                  <a
+                    href={buildWhatsAppLink(
+                      `${plan.name} (${plan.price})`,
+                      undefined,
+                      undefined,
+                      undefined,
+                      undefined,
+                      isZh
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full mt-2.5 py-2 rounded-full text-[11px] font-medium text-[#25D366] hover:bg-[#25D366]/5 active:scale-[0.98] transition-all flex items-center justify-center gap-1.5"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 fill-[#25D366]" />
+                    <span>{isZh ? "WhatsApp 直接私询此方案" : "Inquire via WhatsApp"}</span>
+                  </a>
+
                   {plan.disclaimer && (
-                    <p className="text-[10px] text-[#8E8795] text-center mt-2.5 font-sans">
+                    <p className="text-[10px] text-[#8E8795] text-center mt-2 font-sans">
                       {plan.disclaimer}
                     </p>
                   )}
@@ -595,7 +636,7 @@ export default function HomePage() {
       {/* ========================================================
           SECTION 7: LEARNING JOURNEY (I.S.G.A ROADMAP)
          ======================================================== */}
-      <section className="py-24 lg:py-36 bg-white border-t border-[#E8E3DD]">
+      <section className="py-12 sm:py-20 lg:py-36 bg-white border-t border-[#E8E3DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-2xl">
@@ -627,7 +668,7 @@ export default function HomePage() {
       {/* ========================================================
           SECTION 8: EXPERIENCE & ARCHIVAL TIMELINE
          ======================================================== */}
-      <section className="py-24 lg:py-36 bg-[#FAF9F6] border-t border-[#E8E3DD]">
+      <section className="py-12 sm:py-20 lg:py-36 bg-[#FAF9F6] border-t border-[#E8E3DD]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
@@ -648,7 +689,7 @@ export default function HomePage() {
       {/* ========================================================
           SECTION 9: EDITORIAL INSIGHTS (SAMPLE ESSAYS)
          ======================================================== */}
-      <section className="py-24 lg:py-36 bg-white border-t border-[#E8E3DD]">
+      <section className="py-12 sm:py-20 lg:py-36 bg-white border-t border-[#E8E3DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -733,7 +774,7 @@ export default function HomePage() {
       {/* ========================================================
           SECTION 10: FINAL CTA (SANCTUARY MOOD)
          ======================================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-tr from-[#1E1729] via-[#2D233C] to-[#1E1729] text-white py-24 lg:py-36">
+      <section className="relative overflow-hidden bg-gradient-to-tr from-[#1E1729] via-[#2D233C] to-[#1E1729] text-white py-16 sm:py-24 lg:py-36">
         {/* Subtle Ethereal Refraction Caustic Rings */}
         <div className="absolute top-1/2 right-[12%] -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-white/10 blur-[1px] pointer-events-none" />
         <div className="absolute top-1/2 right-[12%] -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" />

@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -22,6 +23,9 @@ export const viewport: Viewport = {
   themeColor: "#FAF9F6",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -63,11 +67,12 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#FAF9F6] text-[#28252C] selection:bg-[#EBE5F0] selection:text-[#332748]">
         <LanguageProvider>
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 pb-20 md:pb-0">
             {children}
           </main>
           <Footer />
           <FloatingWhatsApp />
+          <MobileBottomNav />
         </LanguageProvider>
       </body>
     </html>

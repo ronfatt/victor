@@ -42,7 +42,7 @@ export function FloatingWhatsApp() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 24, scale: 0.92 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-5 right-4 sm:bottom-7 sm:right-7 z-40 select-none print:hidden"
+          className="hidden md:block fixed bottom-7 right-7 z-40 select-none print:hidden"
           aria-label={isZh ? "WhatsApp 官方私询通道" : "Official WhatsApp Direct Channel"}
         >
           {/* Subtle Outer Ambient Glow Ring */}
