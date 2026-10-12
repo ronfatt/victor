@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '../context/LanguageContext';
 import { ChevronDown, Menu, X, Calendar, Sparkles } from 'lucide-react';
@@ -60,15 +61,16 @@ export function Header({ onOpenBooking }: HeaderProps) {
             className="group flex items-center gap-3.5 select-none flex-shrink-0"
             aria-label="Mikhael Victor Home"
           >
-            {/* Architectural Wing / Lotus Geometric Emblem */}
-            <div className="relative w-9 h-9 rounded-full border border-[#ADA0BE]/50 bg-gradient-to-tr from-white via-[#FAF9F6] to-[#EBE5F0] flex items-center justify-center text-[#2D233C] transition-all duration-500 group-hover:scale-105 group-hover:border-[#2D233C] shadow-xs">
-              <svg
-                viewBox="0 0 24 24"
-                className="w-4.5 h-4.5 fill-none stroke-current stroke-[1.4]"
-              >
-                <path d="M12 2.5c0 4.5-4.5 7.5-9 7.5 4.5 1.2 9 5.5 9 11.5 0-6 4.5-10.3 9-11.5-4.5 0-9-3-9-7.5z" />
-                <circle cx="12" cy="12" r="1.2" className="fill-[#B99C72] stroke-none" />
-              </svg>
+            {/* Authentic Sacred Geometry Golden Emblem */}
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#B99C72]/40 bg-gradient-to-tr from-white via-[#FAF9F6] to-[#F5EFE6] flex items-center justify-center p-1.5 transition-all duration-500 group-hover:scale-105 group-hover:border-[#B99C72] shadow-xs overflow-hidden">
+              <Image
+                src="/images/logo.png"
+                alt="Mikhael Victor Emblem"
+                width={36}
+                height={58}
+                className="w-auto h-full object-contain filter drop-shadow-[0_1px_2px_rgba(185,156,114,0.3)] transition-transform duration-500 group-hover:scale-110"
+                priority
+              />
             </div>
 
             <div>
@@ -338,8 +340,14 @@ export function Header({ onOpenBooking }: HeaderProps) {
                 {/* Drawer Top */}
                 <div className="flex items-center justify-between pb-6 border-b border-[#E8E3DD]">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full border border-[#ADA0BE] bg-white flex items-center justify-center text-[#2D233C]">
-                      <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />
+                    <div className="relative w-8 h-8 rounded-full border border-[#B99C72]/40 bg-white p-1 flex items-center justify-center shadow-xs overflow-hidden">
+                      <Image
+                        src="/images/logo.png"
+                        alt="Mikhael Victor Logo"
+                        width={28}
+                        height={46}
+                        className="w-auto h-full object-contain"
+                      />
                     </div>
                     <span className="font-serif text-sm tracking-[0.18em] text-[#2D233C] font-medium uppercase">
                       Mikhael Victor

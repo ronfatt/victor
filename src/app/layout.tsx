@@ -44,6 +44,15 @@ export const metadata: Metadata = {
     "Klang Malaysia",
     "巴生灵性咨询",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png", sizes: "192x192" },
+    ],
+    apple: [
+      { url: "/icon.png", sizes: "192x192" },
+    ],
+  },
   authors: [{ name: "Mikhael Victor" }],
   openGraph: {
     title: "Mikhael Victor | Spiritual Guidance · Energy Wellness · Conscious Living",

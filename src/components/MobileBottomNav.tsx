@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { buildWhatsAppLink } from '@/config/siteConfig';
@@ -193,8 +194,14 @@ export function MobileBottomNav() {
 
                 <div className="flex items-center justify-between pb-5 border-b border-[#E8E3DD]">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-2xl bg-white border border-[#E8E3DD] shadow-2xs flex items-center justify-center font-serif text-[#2D233C] text-sm">
-                      MV
+                    <div className="relative w-11 h-11 rounded-2xl bg-white border border-[#B99C72]/40 shadow-2xs flex items-center justify-center p-1.5 overflow-hidden">
+                      <Image
+                        src="/images/logo.png"
+                        alt="Mikhael Victor Logo"
+                        width={36}
+                        height={58}
+                        className="w-auto h-full object-contain"
+                      />
                     </div>
                     <div>
                       <h3 className="font-serif text-base text-[#2D233C] font-normal uppercase tracking-wider">

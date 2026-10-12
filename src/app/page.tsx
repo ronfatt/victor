@@ -62,8 +62,16 @@ export default function HomePage() {
               className="lg:col-span-7 space-y-6 sm:space-y-7"
             >
               {/* Refined Eyebrow */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-white/90 border border-[#E8E3DD] text-[10px] font-mono tracking-[0.22em] text-[#2D233C] uppercase shadow-2xs backdrop-blur-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B99C72]" />
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#E8E3DD] text-[10px] font-mono tracking-[0.22em] text-[#2D233C] uppercase shadow-2xs backdrop-blur-xs">
+                <div className="relative w-3.5 h-3.5 overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Logo"
+                    width={14}
+                    height={22}
+                    className="w-auto h-full object-contain"
+                  />
+                </div>
                 <span>{t.hero.eyebrow}</span>
               </div>
 
@@ -190,8 +198,17 @@ export default function HomePage() {
                 </div>
 
                 {/* Subtle Signature Badge */}
-                <div className="absolute -bottom-4 right-6 bg-white/95 border border-[#E8E3DD] backdrop-blur-md py-1.5 px-5 rounded-full text-xs font-serif italic text-[#2D233C] shadow-xs">
-                  Mikhael Victor
+                <div className="absolute -bottom-4 right-6 bg-white/95 border border-[#E8E3DD] backdrop-blur-md py-1.5 px-4 rounded-full text-xs font-serif italic text-[#2D233C] shadow-xs flex items-center gap-2">
+                  <div className="relative w-3.5 h-3.5 flex-shrink-0">
+                    <Image
+                      src="/images/logo.png"
+                      alt="MV Emblem"
+                      width={14}
+                      height={22}
+                      className="w-auto h-full object-contain"
+                    />
+                  </div>
+                  <span>Mikhael Victor</span>
                 </div>
               </div>
             </motion.div>

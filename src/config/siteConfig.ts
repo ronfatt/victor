@@ -56,10 +56,10 @@ export const siteConfig: SiteConfig = {
     experienceClaimZh: "26+ 年修习与教学积累（资料验证中）",
   },
   contact: {
-    whatsappNumber: "60123456789", // Configurable placeholder (Country code + number without plus)
-    whatsappFormatted: "+60 12-345 6789 (待正式号替换)",
-    email: "consultation@mikhaelvictor.example.com",
-    phoneDisplay: "+60 12-345 6789",
+    whatsappNumber: "60162680663", // Official WhatsApp contact number (+60 16-268 0663)
+    whatsappFormatted: "+60 16-268 0663",
+    email: "consultation@mikhaelvictor.com",
+    phoneDisplay: "+60 16-268 0663",
     wechatId: "MikhaelVictor_Official",
     instagramHandle: "@mikhaelvictor.official",
     addressNoteEn: "Private Consultation Studio, Klang, Selangor, Malaysia (Full address provided upon booking confirmation)",

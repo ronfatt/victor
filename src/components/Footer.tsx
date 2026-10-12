@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import { siteConfig } from '../config/siteConfig';
 import { MapPin, Mail, MessageSquare, Globe, AlertCircle, ArrowUpRight } from 'lucide-react';
@@ -34,8 +35,14 @@ export function Footer() {
           {/* Column 1: Brand & Bio Summary */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full border border-[#ADA0BE]/60 bg-white flex items-center justify-center text-[#2D233C] shadow-sm">
-                <span className="font-serif text-lg">✧</span>
+              <div className="relative w-10 h-10 rounded-full border border-[#B99C72]/40 bg-white flex items-center justify-center p-1.5 shadow-sm overflow-hidden">
+                <Image
+                  src="/images/logo.png"
+                  alt="Mikhael Victor Emblem"
+                  width={36}
+                  height={58}
+                  className="w-auto h-full object-contain filter drop-shadow-[0_1px_2px_rgba(185,156,114,0.3)]"
+                />
               </div>
               <span className="font-serif text-xl tracking-[0.14em] text-[#2D233C] font-medium uppercase">
                 Mikhael Victor
