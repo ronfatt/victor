@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { CourseRoadmap } from '@/components/CourseRoadmap';
 import { BookingModal } from '@/components/BookingModal';
+import { LogoWatermark } from '@/components/LogoWatermark';
 import {
   Layers,
   ArrowRight,
@@ -24,8 +25,14 @@ export default function MeditationPage() {
   return (
     <div className="py-16 sm:py-24 bg-[#FAF9F6] space-y-24 lg:space-y-36">
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
+      <section className="relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+        <LogoWatermark
+          className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          height={520}
+          opacity="opacity-[0.035] sm:opacity-[0.05]"
+        />
+
+        <div className="relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
           <Layers className="w-3.5 h-3.5 text-[#B99C72]" />
           <span>I.S.G.A. PROGRESSIVE MEDITATION PATHWAY</span>
         </div>

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { PlaceholderImage } from '@/components/PlaceholderImage';
 import { BookingModal } from '@/components/BookingModal';
+import { LogoWatermark } from '@/components/LogoWatermark';
 import {
   Sparkles,
   Calendar,
@@ -23,8 +24,14 @@ export default function AltTherapyPage() {
   return (
     <div className="py-16 sm:py-24 bg-[#FAF9F6] space-y-24 lg:space-y-36">
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <LogoWatermark
+          className="-top-10 -right-20 lg:right-10 rotate-6"
+          height={600}
+          opacity="opacity-[0.035] sm:opacity-[0.05]"
+        />
+
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 space-y-7">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase">
               <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />

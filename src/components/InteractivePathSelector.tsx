@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { buildWhatsAppLink } from '@/config/siteConfig';
 import { ArrowRight, CheckCircle2, Compass, Sparkles, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LogoWatermark } from './LogoWatermark';
 
 export function InteractivePathSelector() {
   const { t, isZh } = useLanguage();
@@ -21,6 +22,13 @@ export function InteractivePathSelector() {
       {/* Subtle Refraction Glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-gradient-to-r from-[#D5CEE0]/20 to-transparent blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-gradient-to-l from-[#B99C72]/10 to-transparent blur-3xl pointer-events-none" />
+
+      {/* Subtle Ambient Sacred Geometry Logo Watermark */}
+      <LogoWatermark
+        className="top-1/2 right-4 lg:right-24 -translate-y-1/2 rotate-6"
+        height={580}
+        opacity="opacity-[0.035] sm:opacity-[0.05]"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 

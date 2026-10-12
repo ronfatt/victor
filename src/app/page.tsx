@@ -10,6 +10,7 @@ import { CourseRoadmap } from '@/components/CourseRoadmap';
 import { ExperienceTimeline } from '@/components/ExperienceTimeline';
 import { BookingModal } from '@/components/BookingModal';
 import { ArticleModal } from '@/components/ArticleModal';
+import { LogoWatermark } from '@/components/LogoWatermark';
 import { InsightArticle } from '@/types/content';
 import { buildWhatsAppLink } from '@/config/siteConfig';
 import {
@@ -50,7 +51,13 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#FAF9F6] to-[#F5F1EB] pt-8 pb-14 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-36 border-b border-[#E8E3DD]/80">
         {/* Subtle Lavender & Champagne Light Refraction Caustics */}
         <div className="absolute top-1/4 right-[8%] w-[520px] h-[520px] rounded-full bg-gradient-to-br from-[#D5CEE0]/25 via-[#EBE5F0]/15 to-transparent blur-3xl pointer-events-none" />
-        <div className="absolute top-12 left-[5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#D9C3A3]/20 via-[#FAF9F6]/10 to-transparent blur-3xl pointer-events-none" />
+        {/* Subtle Ambient Sacred Geometry Logo Watermark */}
+        <LogoWatermark
+          className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:left-[58%] sm:-translate-x-1/2 -rotate-3"
+          height={680}
+          opacity="opacity-[0.04] sm:opacity-[0.06]"
+          animateSlow
+        />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -252,8 +259,15 @@ export default function HomePage() {
           SECTION 3: ABOUT PREVIEW (EDITORIAL SPREAD)
           Unequal magazine columns, authentic typography
          ======================================================== */}
-      <section className="py-12 sm:py-20 lg:py-36 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-12 sm:py-20 lg:py-36 bg-[#FAF9F6]">
+        {/* Subtle Ambient Sacred Geometry Logo Watermark */}
+        <LogoWatermark
+          className="-top-12 -right-16 lg:right-10 rotate-6"
+          height={620}
+          opacity="opacity-[0.035] sm:opacity-[0.05]"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Visual Left: Sanctuary Plate */}
             <div className="lg:col-span-5">
@@ -653,8 +667,15 @@ export default function HomePage() {
       {/* ========================================================
           SECTION 7: LEARNING JOURNEY (I.S.G.A ROADMAP)
          ======================================================== */}
-      <section className="py-12 sm:py-20 lg:py-36 bg-white border-t border-[#E8E3DD]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-12 sm:py-20 lg:py-36 bg-white border-t border-[#E8E3DD]">
+        {/* Subtle Ambient Sacred Geometry Logo Watermark */}
+        <LogoWatermark
+          className="-bottom-20 -left-16 rotate-12"
+          height={600}
+          opacity="opacity-[0.035] sm:opacity-[0.05]"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
@@ -792,6 +813,15 @@ export default function HomePage() {
           SECTION 10: FINAL CTA (SANCTUARY MOOD)
          ======================================================== */}
       <section className="relative overflow-hidden bg-gradient-to-tr from-[#1E1729] via-[#2D233C] to-[#1E1729] text-white py-16 sm:py-24 lg:py-36">
+        {/* Subtle Radiant Logo Watermark on Dark Plum Cosmos */}
+        <LogoWatermark
+          variant="dark"
+          className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          height={640}
+          opacity="opacity-[0.08] sm:opacity-[0.12]"
+          animateSlow
+        />
+
         {/* Subtle Ethereal Refraction Caustic Rings */}
         <div className="absolute top-1/2 right-[12%] -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-white/10 blur-[1px] pointer-events-none" />
         <div className="absolute top-1/2 right-[12%] -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" />
