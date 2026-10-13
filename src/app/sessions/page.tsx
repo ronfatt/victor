@@ -105,8 +105,8 @@ export default function SessionsPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative aspect-[21/9] sm:aspect-[24/9] rounded-[28px] overflow-hidden border border-[#E8E3DD] bg-[#FAF9F6] editorial-shadow-elevated">
           <Image
-            src="/images/angelic_reading.jpg"
-            alt="Private Consultation Sanctuary"
+            src="/images/real_angel_reading.jpg"
+            alt="Mikhael Victor Angelic Reading Session"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 1024px"
@@ -335,6 +335,46 @@ export default function SessionsPage() {
                 ? "位于雪兰莪州巴生的宁静私人工作室。环境幽静，配备专属香氛与静心氛围，特别适合 RM444 招牌源疗沉浸体验。"
                 : "A tranquil private sanctuary in Klang, Selangor. Features aromatherapy and calming ambience, ideal for the RM444 ALT ritual."}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Media Editorial Spotlight: Reading of Light */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-8 sm:p-12 rounded-[28px] bg-white border border-[#E8E3DD] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center editorial-shadow-elevated">
+          <div className="lg:col-span-5 relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E8E3DD] bg-[#FAF9F6]">
+            <Image
+              src="/images/real_reading_magazine.jpg"
+              alt="光的占卜 - 报章杂志专访 Mikhael Victor"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-center"
+            />
+          </div>
+          <div className="lg:col-span-7 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase">
+              <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />
+              <span>EDITORIAL FEATURE · 媒体专访</span>
+            </div>
+            <h3 className="font-serif text-2xl sm:text-3xl text-[#2D233C] font-normal">
+              {isZh ? "光的占卜 · 杂志深度专访与实操纪实" : "Reading of Light · Media Feature & Field Practice"}
+            </h3>
+            <p className="text-xs sm:text-sm text-[#58535F] leading-relaxed font-sans">
+              {isZh
+                ? "专题报道《光的占卜》：Mikhael Victor 老师长年以直觉天使卡牌、彩光能量与温和倾听为载体，陪伴无数个案看清迷雾中的内在课题。不诉诸宿命迷信，而是以光与觉察启发每一位探寻者找到笃定的内在力量。"
+                : "Feature editorial 'Reading of Light': Documenting Mikhael Victor's long-standing practice integrating angelic card archetypes and color awareness to bring calm clarity to seekers."}
+            </p>
+            <div className="pt-2">
+              <a
+                href={buildWhatsAppLink("天使占卜媒体报道与预约咨询", undefined, undefined, undefined, undefined, isZh)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white text-xs font-medium hover:bg-[#20bd5a] transition-colors shadow-2xs"
+              >
+                <MessageSquare className="w-3.5 h-3.5 fill-white" />
+                <span>{isZh ? "WhatsApp 预约天使占卜" : "Book Angelic Reading"}</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

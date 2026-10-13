@@ -374,7 +374,7 @@ export default function HomePage() {
                     {/* Editorial Companion Image */}
                     <div className="relative aspect-[16/9] sm:aspect-[21/10] rounded-2xl overflow-hidden mb-6 border border-[#E8E3DD] bg-[#EFEAE5]">
                       <Image
-                        src={idx === 0 ? "/images/angelic_reading.jpg" : "/images/alt_therapy_room.jpg"}
+                        src={idx === 0 ? "/images/real_angel_reading.jpg" : "/images/alt_therapy_room.jpg"}
                         alt={srv.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -441,9 +441,9 @@ export default function HomePage() {
                       <Image
                         src={
                           idx === 0
-                            ? "/images/aura_prema_bottles.jpg"
+                            ? "/images/real_reiki_bottles.jpg"
                             : idx === 1
-                            ? "/images/meditation_hall.jpg"
+                            ? "/images/real_course_retreat.jpg"
                             : "/images/access_chi_space.jpg"
                         }
                         alt={srv.title}

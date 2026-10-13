@@ -62,8 +62,8 @@ export default function MeditationPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative aspect-[21/9] sm:aspect-[24/9] rounded-[28px] overflow-hidden border border-[#E8E3DD] bg-[#FAF9F6] editorial-shadow-elevated">
           <Image
-            src="/images/meditation_hall.jpg"
-            alt="I.S.G.A Meditation Sanctuary Hall"
+            src="/images/real_course_retreat.jpg"
+            alt="I.S.G.A Meditation Group Practice Retreat"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 1024px"
@@ -161,6 +161,72 @@ export default function MeditationPage() {
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* Authentic Workshop & Group Practice Gallery */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#B99C72] font-semibold">
+            AUTHENTIC TEACHING & RETREAT ARCHIVE
+          </span>
+          <h2 className="font-serif text-2xl sm:text-4xl text-[#2D233C] mt-2 font-normal">
+            {isZh ? "实体课程现场纪实 · 师生同修档案" : "Workshops & Group Practice In Action"}
+          </h2>
+          <p className="text-xs sm:text-sm text-[#66616F] mt-2 font-sans">
+            {isZh ? "多年来与海内外学员共同实修、研习静心与结业同圆的真实纪实" : "Authentic moments from intensive retreats, whiteboard lectures, and student graduations"}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              src: "/images/real_course_retreat.jpg",
+              title: isZh ? "环形同修静心坛城" : "Circle Meditation Gathering",
+              desc: isZh ? "鲜花曼陀罗环绕，海内外学员静修" : "Surrounded by floral mandalas in stillness"
+            },
+            {
+              src: "/images/real_course_hall.jpg",
+              title: isZh ? "神圣几何空间道场" : "Sacred Geometry Retreat Hall",
+              desc: isZh ? "吉他梵唱共振，深沉定力熏修" : "Acoustic mantra and collective resonance"
+            },
+            {
+              src: "/images/real_course_teaching.jpg",
+              title: isZh ? "心法解析与理论阐释" : "Whiteboard Core Teachings",
+              desc: isZh ? "白板前深入浅出，扎实梳理认知" : "Clear theoretical mapping of inner awareness"
+            },
+            {
+              src: "/images/real_course_group.jpg",
+              title: isZh ? "高阶研习实修合影" : "Intensive Workshop Cohort",
+              desc: isZh ? "多日封闭式实修，深入脉轮与定力" : "Multi-day deep retreat practice"
+            },
+            {
+              src: "/images/real_course_grad.jpg",
+              title: isZh ? "学员结业圆满典礼" : "Course Graduation & Completion",
+              desc: isZh ? "修毕各阶段课程，见证内在成长" : "Celebrating authentic student milestones"
+            },
+            {
+              src: "/images/real_angel_reading.jpg",
+              title: isZh ? "个人静心与能量个案" : "Individual Mentoring & Practice",
+              desc: isZh ? "结合直觉牌卡与水晶，一对一指引" : "One-to-one presence and intuitive guidance"
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="group rounded-2xl overflow-hidden bg-white border border-[#E8E3DD] shadow-2xs hover:shadow-md transition-all">
+              <div className="relative aspect-[16/11] overflow-hidden bg-[#FAF9F6]">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4 sm:p-5">
+                <h4 className="font-serif text-base text-[#2D233C] font-normal">{item.title}</h4>
+                <p className="text-xs text-[#8E8795] font-sans mt-1">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

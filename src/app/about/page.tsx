@@ -102,10 +102,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Right Column Portrait Placeholder */}
+          {/* Right Column Portrait */}
           <div className="lg:col-span-5">
             <PlaceholderImage
-              src="/images/mentor_portrait.jpg"
+              src="/images/real_angel_reading.jpg"
               alt="Mikhael Victor Portrait"
               label="Mikhael Victor"
               sublabel={isZh ? "常驻马来西亚巴生 · 研习与咨询" : "Based in Klang, Malaysia · Study & Guidance"}
@@ -188,6 +188,92 @@ export default function AboutPage() {
         </div>
 
         <ExperienceTimeline />
+      </section>
+
+      {/* Authentic Lineage & Certification Credentials Archive */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-[10px] font-mono tracking-widest text-[#B99C72] uppercase font-semibold">
+            AUTHENTIC CREDENTIALS & TEACHER LINEAGE
+          </span>
+          <h2 className="font-serif text-2xl sm:text-4xl text-[#2D233C] mt-2 font-normal">
+            {isZh ? "恩师传承与研习实照档案" : "Lineage Mentorship & Certified Diplomas"}
+          </h2>
+          <p className="text-xs sm:text-sm text-[#66616F] mt-2 font-sans">
+            {isZh ? "随侍恩师深入研习、海内外学术机构认证与结业证书实物存真" : "Documented archival records of direct mentorship and official international diplomas"}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="group rounded-2xl overflow-hidden bg-white border border-[#E8E3DD] shadow-2xs hover:shadow-md transition-all">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF9F6]">
+              <Image
+                src="/images/real_mentor_lineage.jpg"
+                alt="与恩师修习传承合影"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="p-5">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#B99C72] block mb-1">
+                TEACHER LINEAGE
+              </span>
+              <h4 className="font-serif text-base text-[#2D233C] font-normal">
+                {isZh ? "恩师传承 · 随侍深修" : "Direct Teacher Lineage"}
+              </h4>
+              <p className="text-xs text-[#8E8795] font-sans mt-1">
+                {isZh ? "尊崇身心学灵性导师，于实修中建立清净见地与生命定力。" : "Studying directly under established masters to build authentic grounded discernment."}
+              </p>
+            </div>
+          </div>
+
+          <div className="group rounded-2xl overflow-hidden bg-white border border-[#E8E3DD] shadow-2xs hover:shadow-md transition-all">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF9F6]">
+              <Image
+                src="/images/real_certification_diploma.jpg"
+                alt="研习结业文凭与国际认证证书"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="p-5">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#ADA0BE] block mb-1">
+                ACADEMIC DIPLOMA
+              </span>
+              <h4 className="font-serif text-base text-[#2D233C] font-normal">
+                {isZh ? "研习资质 · 正规学分证书" : "International Diploma Certification"}
+              </h4>
+              <p className="text-xs text-[#8E8795] font-sans mt-1">
+                {isZh ? "完成系统性身心学理论与实践考核，获得国际正式结业文凭。" : "Comprehensive completion of verified contemplative studies and examination."}
+              </p>
+            </div>
+          </div>
+
+          <div className="group rounded-2xl overflow-hidden bg-white border border-[#E8E3DD] shadow-2xs hover:shadow-md transition-all">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF9F6]">
+              <Image
+                src="/images/real_certification_presentation.jpg"
+                alt="授证仪式与学术传承现场"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="p-5">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#B99C72] block mb-1">
+                CEREMONY & CONFERMENT
+              </span>
+              <h4 className="font-serif text-base text-[#2D233C] font-normal">
+                {isZh ? "授证典礼 · 严谨传承授予" : "Official Award & Conferment"}
+              </h4>
+              <p className="text-xs text-[#8E8795] font-sans mt-1">
+                {isZh ? "恪守实证修持标准，导师现场亲授文凭与教学许可认可。" : "Rigorous validation of personal practice before receiving formal authorization."}
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Philosophy Callout */}

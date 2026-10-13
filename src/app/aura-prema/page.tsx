@@ -24,16 +24,30 @@ export default function AuraPremaPage() {
     <div className="py-16 sm:py-24 bg-[#FAF9F6] space-y-20 lg:space-y-28">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
-          <Flower2 className="w-3.5 h-3.5 text-[#B99C72]" />
-          <span>AURA PREMA · BOTANICAL FREQUENCY ESSENCES</span>
+        {/* Aura Prema Dedicated Product Logo */}
+        <div className="flex flex-col items-center justify-center mb-6">
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-white p-3 border border-[#E8E3DD] shadow-sm flex items-center justify-center mb-4 transition-transform hover:scale-105">
+            <Image
+              src="/images/aura_prema_logo_cropped.png"
+              alt="Aura Prema Unicorn Emblem"
+              width={96}
+              height={96}
+              className="w-full h-full object-contain"
+              priority
+            />
+          </div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase">
+            <Flower2 className="w-3.5 h-3.5 text-[#B99C72]" />
+            <span>AURA PREMA · BOTANICAL FREQUENCY ESSENCES</span>
+          </div>
         </div>
+
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#242129] font-normal leading-tight tracking-tight">
-          {isZh ? "Aura Prema 天使花晶与能量美学" : "Aura Prema Angelic Flower Essences"}
+          {isZh ? "Aura Prema 天使花晶与能量灵气瓶" : "Aura Prema Angelic Flower Essences & Reiki Bottles"}
         </h1>
         <p className="mt-4 text-sm sm:text-base text-[#66616F] leading-relaxed max-w-2xl mx-auto font-sans">
           {isZh
-            ? "融合色彩频率、花卉精粹与大天使象征意图。四大精选系列，将觉察与芳香融入日常居家与自我对话中。"
+            ? "融合色彩频率、花卉精粹与大天使象征意图。以独角兽神圣频率为灵感，结合阶梯灵气瓶与花晶能量，将觉察与芳香融入日常居家与自我修习中。"
             : "Synthesizing color resonance, subtle botanical frequencies, and archangelic spiritual contemplation for everyday mindful presence."}
         </p>
 
@@ -52,8 +66,8 @@ export default function AuraPremaPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative aspect-[21/9] sm:aspect-[24/9] rounded-[28px] overflow-hidden border border-[#E8E3DD] bg-[#FAF9F6] editorial-shadow-elevated">
           <Image
-            src="/images/aura_prema_bottles.jpg"
-            alt="Aura Prema Botanical Essence Collection"
+            src="/images/real_reiki_bottles.jpg"
+            alt="Aura Prema Reiki Bottles & Essence Alchemy"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 1024px"
@@ -63,7 +77,7 @@ export default function AuraPremaPage() {
           <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-between text-white">
             <div className="flex items-center justify-between text-[10px] font-mono tracking-widest uppercase">
               <span className="bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                AURA PREMA // AP-COLLECTION
+                AURA PREMA // REIKI ESSENCE BOTTLES
               </span>
               <span className="bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/30 text-[9px]">
                 BOTANICAL FREQUENCY
@@ -71,13 +85,69 @@ export default function AuraPremaPage() {
             </div>
             <div className="max-w-xl">
               <p className="font-serif text-lg sm:text-2xl font-normal drop-shadow-sm">
-                {isZh ? "花朵与光的沉静共振 · 纯净能量芳香" : "Pure Botanical Resonance · Mindful Everyday Fragrance"}
+                {isZh ? "实物呈现 · 灵气瓶与色彩能量阵列" : "Pure Botanical Resonance · Reiki Bottles Collection"}
               </p>
               <p className="text-xs text-white/80 font-sans mt-1">
-                {isZh ? "* 融合花卉精粹、植物精油与大天使象征意图" : "* Formulated with pure botanical extracts and archangelic intention"}
+                {isZh ? "* 阶梯多层灵气瓶架、花卉精粹与独角兽能量频率结合" : "* Chakra-aligned aura balance flacons and botanical flower essences"}
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Authentic Photo Gallery: Real Alchemy & Reiki Bottles */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-[10px] font-mono tracking-widest text-[#B99C72] uppercase font-semibold">
+            AUTHENTIC ALCHEMY & FIELD ARCHIVE
+          </span>
+          <h2 className="font-serif text-2xl sm:text-4xl text-[#2D233C] mt-2 font-normal">
+            {isZh ? "实物呈现 · 灵气瓶与能量曼陀罗实景" : "Reiki Bottles & Sacred Alchemy In Practice"}
+          </h2>
+          <p className="text-xs sm:text-sm text-[#66616F] mt-2 font-sans">
+            {isZh ? "多年研习沉淀的天然色彩瓶、灵气阵列与坛城实拍纪实" : "Real documented photography of Aura Prema essences and ritual mandalas"}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              src: "/images/real_reiki_bottles.jpg",
+              title: isZh ? "脉轮灵气瓶架" : "Chakra Reiki Rack",
+              desc: isZh ? "阶梯架与多色平衡瓶" : "Tiered chakra frequency bottles"
+            },
+            {
+              src: "/images/real_mandala_ritual.jpg",
+              title: isZh ? "心形花晶坛城" : "Heart Lotus Mandala",
+              desc: isZh ? "鲜花花瓣与花精共振" : "Petals and essence circle"
+            },
+            {
+              src: "/images/real_aura_exhibition.jpg",
+              title: isZh ? "线下博览会展柜" : "Exhibition Showcase",
+              desc: isZh ? "Aura Prema 球形瓶实物" : "Spherical glass flacons display"
+            },
+            {
+              src: "/images/real_therapy_oil.jpg",
+              title: isZh ? "身心能量调和" : "Energy Application",
+              desc: isZh ? "水晶矿石与精粹呵护" : "Crystal geode & essence work"
+            }
+          ].map((card, i) => (
+            <div key={i} className="group rounded-2xl overflow-hidden bg-white border border-[#E8E3DD] shadow-2xs hover:shadow-md transition-all">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF9F6]">
+                <Image
+                  src={card.src}
+                  alt={card.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-serif text-sm text-[#2D233C] font-medium">{card.title}</h4>
+                <p className="text-[11px] text-[#8E8795] font-sans mt-0.5">{card.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
