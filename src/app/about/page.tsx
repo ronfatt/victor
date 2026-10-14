@@ -111,7 +111,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Domestic Malaysia Footsteps */}
             <div className="p-8 sm:p-9 rounded-[24px] bg-[#FAF9F6] border border-[#E8E3DD] editorial-shadow-subtle">
               <span className="text-[10.5px] font-mono font-semibold uppercase tracking-widest text-[#B99C72] block mb-4">
@@ -140,6 +140,89 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          {/* Authentic Workshop & International Student Moments Photo Gallery */}
+          <div className="mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-8 pb-4 border-b border-[#E8E3DD]">
+              <div>
+                <span className="text-[10px] font-mono tracking-widest text-[#B99C72] uppercase font-semibold block">
+                  DOCUMENTED FOOTSTEPS & CLASSROOMS
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#2D233C] mt-1 font-normal">
+                  {isZh ? "不同国家与地区 · 研习课程与分享会现场实照" : "Workshops, Seminars & International Student Moments"}
+                </h3>
+              </div>
+              <span className="text-xs text-[#8E8795] font-sans">
+                {isZh ? "26年教学沉淀 · 遍及多国学员" : "26 Years of Documented Practice"}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  src: "/images/real_course_retreat.jpg",
+                  tag: isZh ? "静修营共修" : "Retreat Circle",
+                  title: isZh ? "海内外同修 · 环形静心共修" : "International Retreat Circle",
+                  desc: isZh ? "以鲜花曼陀罗为中心，跨国学员深入集体定力与精微能量调和。" : "Deep collective stillness circle around floral mandala.",
+                },
+                {
+                  src: "/images/real_course_hall.jpg",
+                  tag: isZh ? "大型研习会" : "Vibrational Hall",
+                  title: isZh ? "神圣几何空间 · 梵唱共振" : "Sacred Sound & Vibrational Sanctuary",
+                  desc: isZh ? "吉他现场梵音伴奏，沉淀浮躁心神，体验精微能量流动与身心调和。" : "Acoustic mantra & refined vibrational attunement.",
+                },
+                {
+                  src: "/images/real_course_teaching.jpg",
+                  tag: isZh ? "实操心法授课" : "Lecture & Theory",
+                  title: isZh ? "心法解析 · 讲堂实操教学" : "Direct Classroom Teaching & Lecture",
+                  desc: isZh ? "结合白板深入浅出拆解气场运转、天使源疗心法与信念蓝图重塑。" : "Grounded mapping of inner energetics and subconscious beliefs.",
+                },
+                {
+                  src: "/images/real_course_group.jpg",
+                  tag: isZh ? "学员合影" : "Workshop Cohort",
+                  title: isZh ? "跨国学员 · 密集研习营合影" : "Multi-Regional Workshop Cohort",
+                  desc: isZh ? "来自不同国家与城市的学员齐聚封闭研习营，见证彼此生命能量的扬升。" : "Multi-day intensive cohort gathered for shared transformation.",
+                },
+                {
+                  src: "/images/real_course_sharing.jpg",
+                  tag: isZh ? "交流研讨" : "Sharing Circle",
+                  title: isZh ? "同修互动 · 研习心得分享会" : "Dialogue & Student Sharing Circle",
+                  desc: isZh ? "彼此敞开心扉坦诚交流，分享灵性能量在日常生活、事业与人际中的转化。" : "Reflective dialogues witnessing personal breakthroughs in daily life.",
+                },
+                {
+                  src: "/images/real_course_grad.jpg",
+                  tag: isZh ? "结业授证" : "Graduation",
+                  title: isZh ? "圆满修毕 · 颁发授证留念" : "Graduation & Certificate Conferment",
+                  desc: isZh ? "见证学员完成阶段性系统修习，掌握自主能量运转，迈向明晰丰盛。" : "Celebrating authentic milestones as students complete their training.",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="group rounded-2xl overflow-hidden bg-white border border-[#E8E3DD] shadow-2xs hover:shadow-md transition-all flex flex-col">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#FAF9F6]">
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-xs text-white text-[10px] font-mono uppercase px-2.5 py-1 rounded-full">
+                      {item.tag}
+                    </div>
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-serif text-base text-[#2D233C] font-normal mb-1.5">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-[#8E8795] font-sans leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
