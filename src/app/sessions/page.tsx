@@ -136,29 +136,6 @@ export default function SessionsPage() {
 
       {/* Pricing Consultation Suite */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* First-Time Visitor Guide Callout */}
-        <div className="max-w-4xl mx-auto mb-10 p-5 sm:p-6 rounded-2xl bg-white border border-[#E8E3DD] flex flex-col sm:flex-row sm:items-center justify-between gap-4 editorial-shadow-subtle">
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono tracking-widest uppercase text-[#B99C72] font-semibold">
-              {isZh ? "初次结识 MIKHAEL VICTOR？" : "FIRST-TIME VISITOR GUIDE"}
-            </span>
-            <p className="text-xs text-[#58535F] font-sans leading-relaxed">
-              {isZh
-                ? "如您有特定问题想快速解惑，建议选择 RM50/RM200 一对一天使卡牌占卜；如渴望深层情绪减负、身心对齐与专属仪式，推荐选择 RM444 招牌 ALT 天使源疗体验。"
-                : "For quick clarity on 1-2 questions, start with RM50/RM200 card reading. For deep emotional reset, choose the RM444 Signature ALT Therapy."}
-            </p>
-          </div>
-          <a
-            href={buildWhatsAppLink(undefined, undefined, undefined, undefined, undefined, isZh)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-medium hover:bg-[#20bd5a] transition-colors whitespace-nowrap self-start sm:self-auto flex items-center gap-1.5 shadow-2xs"
-          >
-            <MessageSquare className="w-3.5 h-3.5 fill-white" />
-            <span>{isZh ? "WhatsApp 直接询问" : "Ask on WhatsApp"}</span>
-          </a>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           {t.pricingSection.plans.map((plan) => (
             <div
