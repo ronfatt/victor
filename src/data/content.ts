@@ -61,13 +61,21 @@ export const contentData = {
     aboutPreview: {
       kicker: "THE FOUNDER & MENTOR",
       title: "关于 Mikhael Victor 老师",
-      p1: "Mikhael Victor 是 ALT 天使源疗（Angelic Light Therapy）、Aura Prema 天使花晶及 Access Chi 风水体系的创立者。自1990年代起踏入水晶、灵气与西方灵性哲学探索，并在二十余年中逐步淬炼出独具个人风格的内在觉察路径。",
-      p2: "其教学足迹曾遍及马来西亚多州、新加坡、香港、台湾、文莱，以及西班牙、英国、比利时等海外地区。现常驻于马来西亚雪兰莪州巴生，以严谨、谦和、不故弄玄虚的态度，为渴望内在蜕变的人们提供清晰指引。",
+      p1: "Mikhael Victor 老师 是 ALT 天使源疗 - Aura Prema 天使花晶 与 Access Chi 风水 的创立者。在过去26年里致力于给出天使灵性占卜/疗愈相关教学与能量风水，以专业教学的经验与精细能量的知识，支持到来的人们得到身心灵的优化与进步。",
+      p2: "他用了26年的深入自修与研究，结合西方玄学之水晶、天使疗法、花精、脉轮与气场疗愈、空间净化与能量风水5大主题，淘汰掉过时、无用与迷信的角度，整理出一套实用的安全方法。现居马来西亚巴生，经营自己的静坐中心，以英语、华文/普通话为全球学员与客户提供疗愈咨询与授课。",
+      paragraphs: [
+        "Mikhael Victor 老师 是 ALT 天使源疗 - Aura Prema 天使花晶 与 Access Chi 风水 的创立者。",
+        "在过去26年里致力于给出 - 天使灵性占卜/疗愈 相关教学 与 能量风水 。他以 专业教学的经验 与 精细能量的知识，支持到来的人们得到身心灵的优化 与 进步 。",
+        "过去所咨询 与 教导过的顾客分别来自不同的背景与国家，包括 - 男女企业家，专业人士 ，与 渴望身心灵和谐的人们。",
+        "他用了26年的深入自修与研究 结合了西方玄学的 - 水晶，天使疗法，花精，脉轮与气场疗愈， 空间净化 与 能量风水 5大主题里， 淘汰掉过时，无用 与 迷信 的角度，同时整理出一套能够被实用的安全方法来支持修习者 与 顾客们。",
+        "他相信只要你透过有效步骤回到内心，并持之以恒的锻炼，你也能改变自身的磁场，改写信念蓝图，得到真实灵魂蜕变 与 升华 ！",
+        "现居马来西亚巴生，经营自己的静坐中心，Mikhael Victor 以英语，华文/普通话 为全球学员与客户提供疗愈咨询 与 授课。",
+      ],
       credentialNote: "说明：所有历史受教背景与修习时程均忠实陈列，暂不添加未经验证之官方认证头衔，秉持实事求是的学术与精神自律。",
       stats: [
-        { num: "1996", label: "灵性探索起点", note: "水晶与能量感知研究" },
+        { num: "26+ 年", label: "深入修习与验证", note: "实证实用的安全方法" },
         { num: "3 大", label: "原创实践体系", note: "ALT · Aura Prema · Access Chi" },
-        { num: "100%", label: "尊重个人自主", note: "启发觉察，绝不代做宿命决定" },
+        { num: "双语", label: "跨国界教学咨询", note: "普通话 / 英语 流利服务" },
       ],
     },
     servicesSection: {
@@ -666,13 +674,21 @@ export const contentData = {
     aboutPreview: {
       kicker: "THE FOUNDER & MENTOR",
       title: "About Mikhael Victor",
-      p1: "Mikhael Victor is the founder of ALT Angelic Light Therapy, Aura Prema angelic flower essences, and the Access Chi spatial practice. Since the late 1990s, his exploration of crystals, Reiki, and Western spiritual philosophies has crystallized into a grounded methodology centered on self-awareness.",
-      p2: "Over the years, he has presented seminars and training circles across Malaysia, Singapore, Hong Kong, Taiwan, Brunei, and European destinations including the UK, Spain, and Belgium. Currently rooted in Klang, Malaysia, he welcomes clients seeking honest insight without sensationalism or esoteric mystification.",
-      credentialNote: "Note: All documented educational milestones are presented as practitioner history; formal accredited verification badges remain subject to documented archiving.",
+      p1: "Mikhael Victor is the founder of ALT Angelic Light Therapy, Aura Prema Angelic Flower Essences, and Access Chi Spatial Feng Shui. For 26 years, he has dedicated himself to teaching Angelic readings and spatial harmony, supporting seekers worldwide.",
+      p2: "Combining 26 years of research across crystals, angelic therapy, flower essences, chakra alignment, and space harmonization, he filtered out superstition to curate practical methods for seekers, consulting from Klang globally in English and Mandarin.",
+      paragraphs: [
+        "Mikhael Victor is the founder of ALT Angelic Light Therapy, Aura Prema Angelic Flower Essences, and Access Chi Spatial Feng Shui.",
+        "Over the past 26 years, he has dedicated himself to providing authentic teachings in Angelic spiritual readings, restorative therapy, and energetic Feng Shui, supporting seekers to optimize and elevate their physical, emotional, and spiritual harmony.",
+        "His clients and students represent diverse professional backgrounds and nations, including male and female entrepreneurs, corporate professionals, and individuals seeking grounded holistic balance.",
+        "Through 26 years of intensive personal practice and research across crystals, angelic therapy, flower essences, chakra and aura healing, space purification, and energy Feng Shui, he eliminated outdated superstition to formulate safe, grounded, and practical methods.",
+        "He firmly believes that when you follow proven steps to return within and cultivate consistent discipline, you can shift your energetic field, rewrite your subconscious blueprints, and achieve genuine spiritual elevation.",
+        "Based in Klang, Malaysia, where he operates his private meditation center, Mikhael Victor provides one-on-one sessions and workshops globally in fluent English and Mandarin.",
+      ],
+      credentialNote: "Note: All lineage and practice milestones are factually recorded without fabricated titles, maintaining academic and spiritual integrity.",
       stats: [
-        { num: "1996", label: "Journey Began", note: "Crystal & vibrational exploration" },
-        { num: "3 Core", label: "Proprietary Practices", note: "ALT · Aura Prema · Access Chi" },
-        { num: "100%", label: "Respect for Free Will", note: "Self-realization, not fatalism" },
+        { num: "26+ Yrs", label: "Practice & Research", note: "Verified practical methods" },
+        { num: "3 Core", label: "Proprietary Frameworks", note: "ALT · Aura Prema · Access Chi" },
+        { num: "Bilingual", label: "Global Guidance", note: "English & Mandarin fluent" },
       ],
     },
     servicesSection: {

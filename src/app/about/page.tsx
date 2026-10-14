@@ -28,36 +28,14 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column Text */}
           <div className="lg:col-span-7 space-y-7">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase">
-              <div className="relative w-3.5 h-3.5 flex-shrink-0">
-                <Image
-                  src="/images/logo.png"
-                  alt="Logo Emblem"
-                  width={14}
-                  height={22}
-                  className="w-auto h-full object-contain"
-                />
-              </div>
-              <span>THE PERSON BEHIND THE PRACTICE</span>
-            </div>
-
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#242129] font-normal leading-tight tracking-tight">
               {isZh ? "关于 Mikhael Victor 老师" : "Meet Mikhael Victor"}
             </h1>
 
-            <p className="font-serif text-base sm:text-lg text-[#B99C72] italic font-normal leading-relaxed">
-              {isZh
-                ? "“回到内在，不在于远离生活，而是在柴米油盐中保有明澈的觉察。”"
-                : "“Returning within is not escaping the world; it is seeing ourselves with crystal clarity amid ordinary life.”"}
-            </p>
-
             <div className="space-y-4 text-sm sm:text-base text-[#58535F] leading-relaxed font-sans font-normal">
-              <p>
-                {t.aboutPreview.p1}
-              </p>
-              <p>
-                {t.aboutPreview.p2}
-              </p>
+              {t.aboutPreview.paragraphs?.map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
             </div>
 
             {/* Credential integrity note */}
