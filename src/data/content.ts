@@ -374,8 +374,8 @@ export const contentData = {
     },
     teachingLocations: {
       kicker: "INTERNATIONAL TEACHING TRACE",
-      title: "讲学与分享足迹",
-      subtitle: "多年来受学员邀请，老师曾于以下城市及国家举办线下讲座、静坐工作坊与交流会：",
+      title: "教学与分享足迹",
+      subtitle: "多年来受学员邀请，老师曾于以下城市及国家举办线下课程、静坐工作坊与交流会：",
       domestic: ["雪隆区 / 吉隆坡 (Klang Valley / KL)", "沙巴亚庇 (Kota Kinabalu)", "柔佛麻坡 (Muar)", "马六甲 (Malacca)", "槟城 (Penang)"],
       international: ["新加坡 (Singapore)", "香港 (Hong Kong)", "台湾 (Taiwan)", "文莱 (Brunei)", "英国 (United Kingdom)", "西班牙 (Spain)", "比利时 (Belgium)"],
       note: "注：以上城市为历史线下教学与交流到访地点，不代表常设分支机构。目前所有一对一面谈咨询集中于马来西亚巴生工作室或全球线上预约。",

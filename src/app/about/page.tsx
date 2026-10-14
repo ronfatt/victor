@@ -115,7 +115,7 @@ export default function AboutPage() {
             {/* Domestic Malaysia Footsteps */}
             <div className="p-8 sm:p-9 rounded-[24px] bg-[#FAF9F6] border border-[#E8E3DD] editorial-shadow-subtle">
               <span className="text-[10.5px] font-mono font-semibold uppercase tracking-widest text-[#B99C72] block mb-4">
-                {isZh ? "马来西亚国内讲学地点" : "MALAYSIA DOMESTIC WORKSHOPS"}
+                {isZh ? "马来西亚国内教学地点" : "MALAYSIA DOMESTIC WORKSHOPS"}
               </span>
               <ul className="space-y-3.5 text-xs sm:text-sm text-[#2D233C] font-sans">
                 {t.teachingLocations.domestic.map((loc, i) => (
