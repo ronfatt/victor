@@ -363,74 +363,101 @@ export default function HomePage() {
 
           {/* Curated Grid Layout: 2 Hero Services Top, 3 Disciplines Below */}
           <div className="space-y-6">
-            {/* Top Row: 2 Major Services */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {t.servicesSection.items.slice(0, 2).map((srv, idx) => (
-                <div
-                  key={srv.id}
-                  className="group rounded-[26px] border border-[#E8E3DD] bg-[#FAF9F6] p-7 sm:p-9 flex flex-col justify-between hover:bg-white hover:border-[#ADA0BE] editorial-shadow-subtle hover:editorial-shadow-elevated transition-all duration-400"
-                >
-                  <div>
-                    {/* Editorial Companion Image */}
-                    <div className="relative aspect-[16/9] sm:aspect-[21/10] rounded-2xl overflow-hidden mb-6 border border-[#E8E3DD] bg-[#EFEAE5]">
+            {/* Top: Flagship Hero Service - 天使灵性占卜 (含1对1占卜与ALT天使源疗) */}
+            {(() => {
+              const srv = t.servicesSection.items[0];
+              if (!srv) return null;
+              return (
+                <div className="group rounded-[28px] border border-[#E8E3DD] bg-[#FAF9F6] p-7 sm:p-10 lg:p-12 hover:bg-white hover:border-[#ADA0BE] editorial-shadow-subtle hover:editorial-shadow-elevated transition-all duration-400">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    {/* Left: Companion Image */}
+                    <div className="lg:col-span-5 relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl overflow-hidden border border-[#E8E3DD] bg-[#EFEAE5]">
                       <Image
-                        src={idx === 0 ? "/images/real_angel_reading.jpg" : "/images/alt_therapy_room.jpg"}
+                        src="/images/real_angel_reading.jpg"
                         alt={srv.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 1024px) 100vw, 42vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-3 left-4 text-[10px] font-mono uppercase tracking-wider text-white/90 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/20">
-                        {srv.badge}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute bottom-3.5 left-4 text-[10px] font-mono uppercase tracking-wider text-white/90 bg-black/45 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                        FLAGSHIP // {srv.badge}
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="font-mono text-xs text-[#ADA0BE] font-semibold tracking-wider">
-                        {`0${idx + 1} // DISCIPLINE`}
-                      </span>
-                      <span className="px-3 py-1 rounded-full bg-white border border-[#E8E3DD] text-[10px] font-medium text-[#2D233C] shadow-2xs">
-                        {srv.badge}
-                      </span>
+                    {/* Right: Content */}
+                    <div className="lg:col-span-7 flex flex-col justify-between space-y-5">
+                      <div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="font-mono text-xs text-[#ADA0BE] font-semibold tracking-wider">
+                            01 // FLAGSHIP DISCIPLINE
+                          </span>
+                          <span className="px-3 py-0.5 rounded-full bg-white border border-[#E8E3DD] text-[10px] font-medium text-[#2D233C] shadow-2xs">
+                            {srv.badge}
+                          </span>
+                        </div>
+
+                        <h3 className="font-serif text-3xl sm:text-4xl text-[#2D233C] font-normal group-hover:text-[#443659] transition-colors">
+                          {srv.title}
+                        </h3>
+                        <p className="text-xs font-mono uppercase tracking-wider text-[#B99C72] mt-1 mb-4">
+                          {srv.subtitle}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E3DD] text-[11px] font-sans text-[#2D233C]">
+                            <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />
+                            {isZh ? "1对1灵性卡牌占卜 (20/60 min)" : "1-on-1 Card Readings"}
+                          </span>
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E3DD] text-[11px] font-sans text-[#2D233C]">
+                            <SunMedium className="w-3.5 h-3.5 text-[#B99C72]" />
+                            {isZh ? "ALT 天使源疗深度仪式 (90 min)" : "Signature ALT Therapy"}
+                          </span>
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-[#58535F] leading-relaxed mb-5 font-sans">
+                          {srv.description}
+                        </p>
+
+                        {/* Features */}
+                        <ul className="space-y-2 text-xs text-[#242129] font-sans">
+                          {srv.features.map((f, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#B99C72]" />
+                              <span>{f}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                        <Link
+                          href={`/${srv.slug}`}
+                          className="px-7 py-3.5 rounded-full bg-[#2D233C] text-white hover:bg-[#443659] text-xs font-medium text-center transition-all flex items-center justify-center gap-2 shadow-sm"
+                        >
+                          <span>{isZh ? "查看占卜与源疗详情与定价" : "Explore Readings & Pricing"}</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        <a
+                          href={buildWhatsAppLink(isZh ? "天使灵性占卜与源疗咨询" : "Angelic Readings & ALT Therapy", undefined, undefined, undefined, undefined, isZh)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-6 py-3.5 rounded-full bg-[#25D366] text-white hover:bg-[#20bd5a] text-xs font-medium text-center transition-all flex items-center justify-center gap-2 shadow-sm"
+                        >
+                          <MessageSquare className="w-3.5 h-3.5 fill-white" />
+                          <span>{isZh ? "WhatsApp 直接询问" : "Direct WhatsApp"}</span>
+                        </a>
+                      </div>
                     </div>
-
-                    <h3 className="font-serif text-2xl sm:text-3xl text-[#2D233C] font-normal group-hover:text-[#443659] transition-colors">
-                      {srv.title}
-                    </h3>
-                    <p className="text-xs font-mono uppercase tracking-wider text-[#B99C72] mt-1 mb-4">
-                      {srv.subtitle}
-                    </p>
-
-                    <p className="text-xs sm:text-sm text-[#58535F] leading-relaxed mb-6 font-sans">
-                      {srv.description}
-                    </p>
-
-                    {/* Features */}
-                    <ul className="space-y-2 text-xs text-[#242129] mb-8 font-sans">
-                      {srv.features.map((f, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#B99C72]" />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-
-                  <Link
-                    href={`/${srv.slug}`}
-                    className="w-full py-3.5 px-5 rounded-full border border-[#E8E3DD] bg-white group-hover:bg-[#2D233C] group-hover:text-white group-hover:border-[#2D233C] text-xs font-medium text-center text-[#2D233C] transition-all flex items-center justify-center gap-2 shadow-2xs"
-                  >
-                    <span>{isZh ? "了解此服务详情" : "Explore Discipline"}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
                 </div>
-              ))}
-            </div>
+              );
+            })()}
 
-            {/* Bottom Row: 3 Supplementary Pathways */}
+            {/* Bottom Row: 3 Supplementary Disciplines */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {t.servicesSection.items.slice(2, 5).map((srv, idx) => (
+              {t.servicesSection.items.slice(1, 4).map((srv, idx) => (
                 <div
                   key={srv.id}
                   className="group rounded-[22px] border border-[#E8E3DD] bg-[#FAF9F6] p-6 sm:p-7 flex flex-col justify-between hover:bg-white hover:border-[#ADA0BE] transition-all duration-300"
@@ -459,7 +486,7 @@ export default function HomePage() {
 
                     <div className="flex items-center justify-between mb-3">
                       <span className="font-mono text-xs text-[#ADA0BE]">
-                        0{idx + 3}
+                        0{idx + 2}
                       </span>
                       <span className="px-2.5 py-0.5 rounded-full bg-white border border-[#E8E3DD] text-[9px] font-medium text-[#2D233C]">
                         {srv.badge}

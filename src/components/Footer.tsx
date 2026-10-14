@@ -119,12 +119,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs text-[#666070]">
               <li>
                 <Link href="/sessions" className="hover:text-[#2D233C] transition-colors">
-                  {isZh ? "一对一灵性咨询" : "Private Sessions"}
-                </Link>
-              </li>
-              <li>
-                <Link href="/alt-therapy" className="hover:text-[#2D233C] transition-colors">
-                  {isZh ? "ALT 天使源疗" : "ALT Light Therapy"}
+                  {isZh ? "天使灵性占卜 (含ALT源疗)" : "Angelic Readings & ALT"}
                 </Link>
               </li>
               <li>

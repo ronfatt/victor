@@ -89,15 +89,15 @@ export default function SessionsPage() {
 
         <div className="relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
           <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />
-          <span>ONE TO ONE · PRIVATE CONSULTATION SUITE</span>
+          <span>ANGELIC GUIDANCE & ALT THERAPY SUITE</span>
         </div>
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#242129] font-normal leading-tight tracking-tight">
-          {isZh ? "一对一私人灵性咨询" : "Private Contemplative Sessions"}
+          {isZh ? "天使灵性占卜与 ALT 天使源疗" : "Angelic Readings & ALT Therapy"}
         </h1>
         <p className="mt-4 text-sm sm:text-base text-[#66616F] leading-relaxed font-sans max-w-2xl mx-auto">
           {isZh
-            ? "在全然专注与不带批判的空间里，深入探讨你当下所面临的生活课题、内在信念与心绪盲点。线上视频与巴生工作室面对面皆可预约。"
-            : "In a dedicated, confidential space free of judgment, unpack current crossroads, unconscious assumptions, and emotional bottlenecks."}
+            ? "融合一对一象征卡牌占卜与老师原创 ALT 天使源疗深度仪式。涵盖 20/60 分钟牌卡直觉解读，以及 90 分钟招牌身心重置与深度静心体验。线上视频与巴生工作室面对面皆可预约。"
+            : "Integrating 1-on-1 intuitive card readings with Victor's signature 90-minute ALT restorative ritual. Available via Zoom or in-person at Klang studio."}
         </p>
       </section>
 
@@ -144,8 +144,8 @@ export default function SessionsPage() {
             </span>
             <p className="text-xs text-[#58535F] font-sans leading-relaxed">
               {isZh
-                ? "如您有特定单一困扰想快速解惑，建议选择 RM50 灵性卡牌；如渴望深层情绪减负与静心仪式，推荐选择 RM444 招牌 ALT 体验。"
-                : "For quick symbolic impressions on 1-2 questions, start with RM50. For deep emotional decompression, choose RM444 Signature ALT."}
+                ? "如您有特定问题想快速解惑，建议选择 RM50/RM200 一对一天使卡牌占卜；如渴望深层情绪减负、身心对齐与专属仪式，推荐选择 RM444 招牌 ALT 天使源疗体验。"
+                : "For quick clarity on 1-2 questions, start with RM50/RM200 card reading. For deep emotional reset, choose the RM444 Signature ALT Therapy."}
             </p>
           </div>
           <a

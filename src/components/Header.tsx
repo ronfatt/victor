@@ -77,8 +77,8 @@ export function Header({ onOpenBooking }: HeaderProps) {
               <span className="block font-serif text-[15px] sm:text-[17px] tracking-[0.2em] text-[#2D233C] font-normal uppercase leading-tight group-hover:text-[#443659] transition-colors">
                 Mikhael Victor
               </span>
-              <span className="block text-[8.5px] font-mono tracking-[0.26em] text-[#66616F] uppercase leading-none mt-1">
-                Klang · Spiritual Wellness
+              <span className="block text-[8.5px] font-mono tracking-[0.2em] text-[#66616F] uppercase leading-none mt-1">
+                {isZh ? "天使，灵气 与 风水" : "Angels · Reiki · Feng Shui"}
               </span>
             </div>
           </Link>
@@ -132,32 +132,25 @@ export function Header({ onOpenBooking }: HeaderProps) {
                 >
                   <div className="px-3.5 py-2 border-b border-[#E8E3DD]/60 mb-1 flex items-center justify-between">
                     <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#ADA0BE]">
-                      {isZh ? "五大专业修习体系" : "CORE DISCIPLINES"}
+                      {isZh ? "四大核心服务体系" : "CORE DISCIPLINES"}
                     </span>
-                    <span className="text-[9px] text-[#B99C72] font-mono">01—05</span>
+                    <span className="text-[9px] text-[#B99C72] font-mono">01—04</span>
                   </div>
 
                   <Link
                     href="/sessions"
                     className="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-[#FAF9F6] transition-colors group"
                   >
-                    <span className="text-xs font-serif font-medium text-[#242129] group-hover:text-[#2D233C]">
-                      {isZh ? "一对一私人咨询" : "Private Sessions"}
-                    </span>
-                    <span className="text-[11px] text-[#66616F] font-sans">
-                      {isZh ? "20/60/90分钟象征解读与反思指引" : "20/60/90 min intuitive readings"}
-                    </span>
-                  </Link>
-
-                  <Link
-                    href="/alt-therapy"
-                    className="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-[#FAF9F6] transition-colors group"
-                  >
-                    <span className="text-xs font-serif font-medium text-[#242129] group-hover:text-[#2D233C]">
-                      {isZh ? "ALT 天使源疗" : "ALT Light Therapy"}
-                    </span>
-                    <span className="text-[11px] text-[#66616F] font-sans">
-                      {isZh ? "原创灵性仪式与身心对齐体验" : "Proprietary reflective sacred ritual"}
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-serif font-medium text-[#242129] group-hover:text-[#2D233C]">
+                        {isZh ? "天使灵性占卜" : "Angelic Readings & ALT"}
+                      </span>
+                      <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-[#EBE5F0] text-[#2D233C]">
+                        {isZh ? "含1对1与ALT" : "Readings & ALT"}
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-[#66616F] font-sans mt-0.5">
+                      {isZh ? "内含 1对1牌卡占卜 与 90分钟 ALT 天使源疗深度仪式" : "Includes 1-on-1 card reading & 90-min ALT restorative ritual"}
                     </span>
                   </Link>
 
@@ -381,21 +374,19 @@ export function Header({ onOpenBooking }: HeaderProps) {
                   </Link>
 
                   <div className="pt-3 pb-1 px-4 text-[10px] font-mono font-semibold text-[#ADA0BE] tracking-widest uppercase">
-                    {isZh ? "五大专业修习体系" : "CORE PRACTICES"}
+                    {isZh ? "四大核心服务体系" : "CORE PRACTICES"}
                   </div>
                   <Link
                     href="/sessions"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-4 py-2 rounded-xl text-[#58535F] hover:bg-white text-sm"
+                    className="block px-4 py-2.5 rounded-xl text-[#58535F] hover:bg-white text-sm"
                   >
-                    {isZh ? "一对一私人咨询 (Sessions)" : "Private Sessions"}
-                  </Link>
-                  <Link
-                    href="/alt-therapy"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block px-4 py-2 rounded-xl text-[#58535F] hover:bg-white text-sm"
-                  >
-                    {isZh ? "ALT 天使源疗 (ALT Therapy)" : "ALT Therapy"}
+                    <div className="font-medium text-[#242129]">
+                      {isZh ? "天使灵性占卜 (Angelic Readings)" : "Angelic Readings & ALT"}
+                    </div>
+                    <div className="text-[11px] text-[#8E8795] mt-0.5">
+                      {isZh ? "含 1对1牌卡占卜 与 ALT 天使源疗" : "Includes 1-on-1 readings & ALT therapy"}
+                    </div>
                   </Link>
                   <Link
                     href="/aura-prema"
