@@ -349,7 +349,7 @@ export default function AuraPremaPage() {
                     {item.theme}
                   </p>
 
-                  <p className="text-xs text-[#66616F] leading-relaxed font-sans">
+                  <p className="text-xs text-[#66616F] leading-relaxed font-sans whitespace-pre-line">
                     {item.description}
                   </p>
                 </div>
