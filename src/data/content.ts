@@ -260,7 +260,7 @@ export const contentData = {
         {
           levelNumber: "00",
           title: "预备课 · 心轮静心",
-          subtitle: "Heart Meditation",
+          subtitle: "",
           description: "预备课从［心轮静心］开始，初学者须从这里开始学习属于我们的简单调息，观想 与 专注。\n\n给准备好愿意以爱对自己承诺，开展心之光的人。\n\n此静心透过一个点化仪式而启动，这会引导精细的灵性能量流入你的心轮，让神性之爱的真言 与 你自身的爱唤醒，深化合一的体验。\n\n学习后，你可以每天早晚各 15 分钟，或更久的持续与你心中的爱一起共振。当规律 与 持续修习时，心情得以平复，思绪变得专注，内心的稳定，平安 与 和谐会产生。\n\n此静坐课适合大众 与 小白，你可以学习到每日如何好好的开展规律静坐，调频心轮的习惯。\n\n大约规律锻炼两个月后，你可以询问如何接下去你的 I.S.G.A 静坐的第一课。",
           format: "半日 / 线上或实体工作坊",
           prerequisite: "零基础学员皆可参加",
@@ -268,7 +268,7 @@ export const contentData = {
         {
           levelNumber: "01",
           title: "第一课 · Shuddhi 脉轮灵性清理",
-          subtitle: "Chakra Purification & Shuddhi",
+          subtitle: "",
           description: "I.S.G.A 静坐第一课 运用梵文真言 来 好好的，安全的，有效简易的从灵性层面来 净化你的脉轮（别混绕了一般的能量疗愈净化脉轮）。\n\n你也会学习如何校准你的高我连接，止观。\n\n第一课好好的规律锻炼 2 到 三个月，或更久。\n\n当你准备好了，才来学习第二课。",
           format: "周末集中研习",
           prerequisite: "建议先修心轮预备课",
@@ -276,7 +276,7 @@ export const contentData = {
         {
           levelNumber: "02",
           title: "第二课 · Atma Jyoti 第八脉轮启动",
-          subtitle: "Atma Jyoti Activation",
+          subtitle: "",
           description: "Atma - 个体心灵/灵魂，Jyoti- 神性的光。\nAtma Jyoti 代表 你的灵魂之光/星。\n\n第二课带领你了解何谓 - 第八脉轮，此脉轮的重要性，如何开启，如何清洗业力的外结构，如何允许高我的光流入你的 Centerline 垂直中线，什么水晶支持你的第二课锻炼 等等。\n\n第二课是一个 4日的线下密集课程，分成两个周末来上，以及 事后的锻炼 与 督导。\n\n只给准备好，已经规律锻炼好第一课 + 觉得我们 I.S.G.A 静坐是你的道路者才来询问如何参加。",
           format: "实体 4 天（跨越 2 个周末）",
           prerequisite: "规律锻炼好第一课者",
@@ -284,7 +284,7 @@ export const contentData = {
         {
           levelNumber: "03",
           title: "第三课 · Atma Jyoti 内在能量结构与净化",
-          subtitle: "Internal Structure & Deep Alignment",
+          subtitle: "",
           description: "延续第二课的锻炼，在第三课里你将会学习如何借由第八脉轮的灵性之光来安全的释放内在旧结构的清理。\n\n一步步支持你释放掉累世的印记，让你的光体得以变得轻盈，意识也随着开展。",
           format: "封闭式密集修习",
           prerequisite: "完成第二课修习并经导师核准",
@@ -292,7 +292,7 @@ export const contentData = {
         {
           levelNumber: "04",
           title: "第四课 · Prajna 灵视的开启",
-          subtitle: "Prajna Spiritual Sight Awakening",
+          subtitle: "",
           description: "完成 第三课一段时间后，是时候开启你的灵视能力，俗称 - 第三眼 👁️。\n\n但这并不是一般外面说的开启第三眼后的鬼神论 😒\n唯有亲自学习到此阶，你可以更好的第三眼灵性理解，能量玄秘角度，以及 目标指向。\n\n这一阶你会得到我们独有的［独角兽灵视盘］与运用方法来优化，精细化你的眉心轮能量。提升个人的能量辨识能力，以及 支持开展更高的灵性意识。",
           format: "进阶导师陪伴制",
           prerequisite: "完成第三课修习一段时间者",
@@ -301,7 +301,7 @@ export const contentData = {
         {
           levelNumber: "05",
           title: "第五课 · 高阶修习（内容暂不公开）",
-          subtitle: "Advanced Master Practice",
+          subtitle: "",
           description: "完成以上的锻炼成为日常后，老师会评估你是否准备好上第五课。",
           format: "",
           prerequisite: "老师个别评估通知",
