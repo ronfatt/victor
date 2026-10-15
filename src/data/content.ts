@@ -434,7 +434,17 @@ export const contentData = {
     auraSection: {
       kicker: "AURA PREMA AESTHETICS",
       title: "Aura Prema 天使花晶与能量美学",
-      subtitle: "将灵性意识注入日常生活。三大核心产品系列：能量喷雾类（7种）、灵气瓶类（14种）与气场沐浴露（1种）。",
+      subtitle: "透过色彩的映照来 —— 疗愈过去，支持当下，活出可能性。",
+      philosophy: {
+        tagline: "透过色彩的映照来 - 疗愈过去，支持当下，活出可能性 。",
+        intro: "里边能量源自于 花朵精华，海洋精华，色彩精华，独角兽 与 天使 的结合性能量疗愈产品。主要支持一个人平衡负面情绪与思绪，提升运气，协助意识的开展 与 达到环境的能量调和。",
+        auraMeaning: "Aura 代表气场，代表光",
+        premaMeaning: "Prema 代表神性的爱 与 滋养",
+        elements: "在自然界中，［水晶 - 花朵 - 色彩 - 天使 ］拥有不同高-中-低，充满生生不息 与 和谐的自然波长，能够对应到人体的脉轮 与 情绪思绪。运用产品将能够产生气场的共振来协调心灵 与 灵性能量失衡的地方给抚平。",
+        selfAwareness: "色彩的能量波长 是绝佳自我觉察的工具之一，在 Aura Prema 天使花晶 的体系里，你可以学习到如何透过不同瓶子所选择的颜色来理解自身各方面的心理约束给理清。使用产品的优质能量将支持你创造自在人生。",
+        process: "Aura-Prema 天使花晶 产品 是 透过独特的能量化过程而产生的活性波动。每一种类都小心翼翼的选择最合适的香氛，花朵精华，以及 柔和的灵性能量化 。Mikhael Victor 老师会直接连接特定色彩天使与独角兽的祝福来优化瓶子里的能量质地，增加瓶子里的精细波动，形成你们看到生生不息的瓶子，后，才交到顾客手里。",
+        categoryLead: "产品目前主要分为三大核心系列：",
+      },
       categories: [
         {
           id: "sprays",
@@ -444,13 +454,13 @@ export const contentData = {
           volumeInfo: "100ml / 瓶 · 7 款主题",
           status: "available",
           items: [
-            { name: "Archangel Mikhael", colorName: "米迦勒 · 湛蓝", colorHex: "#3A5C8A", volume: "100ml", theme: "力量 · 守护 · 意志澄澈", description: "建立清晰界限，驱散内在恐惧与犹疑，唤醒从容不迫的内在力量。", image: "/images/spray_mikhael.jpg" },
-            { name: "Archangel Jophiel", colorName: "约菲尔 · 翠绿", colorHex: "#4C7C59", volume: "100ml", theme: "智慧 · 美好心境 · 澄明思维", description: "涤荡负面思绪，唤醒对生活诗意的感知与纯净的灵性洞见。", image: "/images/spray_jophiel.jpg" },
-            { name: "Archangel Chamuel", colorName: "夏弥尔 · 柔粉", colorHex: "#D88B9D", volume: "100ml", theme: "无条件之爱 · 关系和解", description: "融化对自我的挑剔与苛求，在柔软的爱与包容中接纳真实的自己。", image: "/images/spray_chamuel.jpg" },
-            { name: "Archangel Gabriel", colorName: "加百列 · 钻石透白", colorHex: "#ECEAE4", volume: "100ml", theme: "重生 · 纯粹真理 · 创造力", description: "如朝露般净化沉重陈腐记忆，为新计划与自我表达注入纯净动力。", image: "/images/spray_gabriel.jpg" },
-            { name: "Archangel Raphael", colorName: "拉斐尔 · 橄榄青", colorHex: "#708238", volume: "100ml", theme: "整全和谐 · 身心安顿", description: "深沉的大自然抚慰力，舒缓因过度劳累导致的神经紧绷与失调。", image: "/images/spray_raphael.jpg" },
-            { name: "Archangel Uriel", colorName: "乌列尔 · 亮金", colorHex: "#C59B27", volume: "100ml", theme: "灵感启迪 · 转化行动力", description: "点亮内心理性的金黄火焰，将悬空的灵感转化为扎实的现实成就。", image: "/images/spray_uriel.jpg" },
-            { name: "Archangel Zadkiel", colorName: "萨基尔 · 紫罗兰", colorHex: "#6B4984", volume: "100ml", theme: "宽恕 · 精神转化 · 自由解脱", description: "转化宿世或过往的遗憾与自责，在紫罗兰之光中重获心灵的真正释然。", image: "/images/spray_zadkiel.jpg" },
+            { name: "Archangel Mikhael", colorName: "米迦勒 · 蓝光", colorHex: "#3A5C8A", volume: "100ml", theme: "宁静 · 祥和 · 保护", description: "喷洒在房间给自己 Me Time，支持好眠。", image: "/images/spray_mikhael.jpg" },
+            { name: "Archangel Jophiel", colorName: "约菲尔 · 碧绿光", colorHex: "#4C7C59", volume: "100ml", theme: "沟通 · 流动 · 看见美好", description: "增加环境里人与人之间的沟通变得清晰、合理，以及看见美好。", image: "/images/spray_jophiel.jpg" },
+            { name: "Archangel Chamuel", colorName: "夏弥尔 · 粉红光", colorHex: "#D88B9D", volume: "100ml", theme: "爱 · 和谐 · 甜美 · 温暖", description: "任何空间都需要更多的爱与甜美。", image: "/images/spray_chamuel.jpg" },
+            { name: "Archangel Gabriel", colorName: "加百列 · 钻石光", colorHex: "#ECEAE4", volume: "100ml", theme: "净化 · 提升意识", description: "净化空间的灰暗、负能量，以及提升粗钝波动转化为精细。", image: "/images/spray_gabriel.jpg" },
+            { name: "Archangel Raphael", colorName: "拉斐尔 · 橄榄绿光", colorHex: "#708238", volume: "100ml", theme: "整全和谐 · 身心安顿", description: "深沉的大自然抚慰力，舒缓因过度劳累导致的神经紧绷与失调。", image: "/images/spray_raphael.jpg" },
+            { name: "Archangel Uriel", colorName: "乌列尔 · 亮金光", colorHex: "#C59B27", volume: "100ml", theme: "灵感启迪 · 转化行动力", description: "点亮内心理性的金黄火焰，将悬空的灵感转化为扎实的现实成就。", image: "/images/spray_uriel.jpg" },
+            { name: "Archangel Zadkiel", colorName: "萨基尔 · 紫罗兰光", colorHex: "#6B4984", volume: "100ml", theme: "宽恕 · 精神转化 · 自由解脱", description: "转化宿世或过往的遗憾与自责，在紫罗兰之光中重获心灵的真正释然。", image: "/images/spray_zadkiel.jpg" },
           ],
         },
         {
@@ -1057,7 +1067,17 @@ export const contentData = {
     auraSection: {
       kicker: "AURA PREMA AESTHETICS",
       title: "Aura Prema Angelic Flower Essences",
-      subtitle: "Infusing spiritual awareness into daily life across 3 core product collections: Energy Aura Sprays (7 Types), Reiki Energy Bottles (14 Types), and Aura Shower Gel (1 Type).",
+      subtitle: "Reflecting Through Color — Healing the Past, Supporting the Present, Living into Possibility.",
+      philosophy: {
+        tagline: "Reflecting Through Color — Healing the Past, Supporting the Present, Living into Possibility.",
+        intro: "Vibrational energy synthesized from botanical essences, marine essences, color frequencies, and the sacred synergy of unicorns and angels. Primarily supports individuals in balancing emotional stress, elevating personal luck, unfolding consciousness, and achieving harmonious environmental alignment.",
+        auraMeaning: "Aura represents the energy field and divine light",
+        premaMeaning: "Prema represents divine love and spiritual nourishment",
+        elements: "In the natural world, [Crystals · Flowers · Colors · Angels] carry high, medium, and low natural frequencies brimming with vital harmony, directly corresponding to human chakras and thoughts. Interacting with these essences activates auric resonance to restore spiritual and emotional equilibrium.",
+        selfAwareness: "Color wavelengths are one of the most profound tools for self-awareness. Within the Aura Prema system, discovering the colors you are drawn to illuminates subconscious limitations, guiding you toward an unburdened, authentic life.",
+        process: "Aura Prema essences are created through an artisanal energetic process that produces active vibrational resonance. Every variant is meticulously formulated with attuned fragrances, botanical distillations, and gentle energetic activation. Teacher Mikhael Victor connects directly with specific color angels and unicorn blessings to refine each flacon's subtle vibration before it reaches you.",
+        categoryLead: "The collection is structured into 3 core series:",
+      },
       categories: [
         {
           id: "sprays",
@@ -1067,13 +1087,13 @@ export const contentData = {
           volumeInfo: "100ml / Bottle · 7 Themes",
           status: "available",
           items: [
-            { name: "Archangel Mikhael", colorName: "Deep Azure Blue", colorHex: "#3A5C8A", volume: "100ml", theme: "Strength · Protection · Boundary Clarity", description: "Fosters steady boundaries, clears lingering self-doubt, and awakens grounded inner courage.", image: "/images/spray_mikhael.jpg" },
-            { name: "Archangel Jophiel", colorName: "Emerald Green", colorHex: "#4C7C59", volume: "100ml", theme: "Wisdom · Mental Beauty · Lucidity", description: "Disperses chaotic thoughts and invites poetic appreciation for everyday life with subtle insight.", image: "/images/spray_jophiel.jpg" },
-            { name: "Archangel Chamuel", colorName: "Gentle Rose Pink", colorHex: "#D88B9D", volume: "100ml", theme: "Unconditional Love · Reconciled Heart", description: "Melts harsh inner self-criticism, bathing relationships in quiet warmth and acceptance.", image: "/images/spray_chamuel.jpg" },
-            { name: "Archangel Gabriel", colorName: "Diamond Crystalline White", colorHex: "#ECEAE4", volume: "100ml", theme: "Rebirth · Pure Truth · Creative Flow", description: "Cleanses stale energetic impressions, infusing fresh momentum into new artistic or life ventures.", image: "/images/spray_gabriel.jpg" },
-            { name: "Archangel Raphael", colorName: "Olive Sage", colorHex: "#708238", volume: "100ml", theme: "Holistic Rest · Deep Grounding", description: "A deeply soothing botanical cadence to soften overworked nervous systems and restore equilibrium.", image: "/images/spray_raphael.jpg" },
-            { name: "Archangel Uriel", colorName: "Luminous Gold", colorHex: "#C59B27", volume: "100ml", theme: "Epiphany · Realized Manifestation", description: "Kindles the golden flame of focused intellect, turning abstract ideals into grounded accomplishments.", image: "/images/spray_uriel.jpg" },
-            { name: "Archangel Zadkiel", colorName: "Violet Amethyst", colorHex: "#6B4984", volume: "100ml", theme: "Forgiveness · Spiritual Freedom", description: "Transmutes past regrets into liberating wisdom under the graceful embrace of violet resonance.", image: "/images/spray_zadkiel.jpg" },
+            { name: "Archangel Mikhael", colorName: "Blue Ray", colorHex: "#3A5C8A", volume: "100ml", theme: "Serenity · Peace · Protection", description: "Mist in your room for personal Me Time, supporting deep, peaceful sleep.", image: "/images/spray_mikhael.jpg" },
+            { name: "Archangel Jophiel", colorName: "Emerald Green Ray", colorHex: "#4C7C59", volume: "100ml", theme: "Communication · Flow · Perceiving Beauty", description: "Brings clarity and reasonable flow to communication in your environment, inspiring appreciation of everyday beauty.", image: "/images/spray_jophiel.jpg" },
+            { name: "Archangel Chamuel", colorName: "Pink Ray", colorHex: "#D88B9D", volume: "100ml", theme: "Love · Harmony · Sweetness · Warmth", description: "Infuses any space with more unconditional love, harmony, and sweetness.", image: "/images/spray_chamuel.jpg" },
+            { name: "Archangel Gabriel", colorName: "Diamond Crystalline Ray", colorHex: "#ECEAE4", volume: "100ml", theme: "Purification · Conscious Elevation", description: "Cleanses ambient heaviness and negative energy, elevating dense vibrations into subtle, refined harmony.", image: "/images/spray_gabriel.jpg" },
+            { name: "Archangel Raphael", colorName: "Olive Sage Ray", colorHex: "#708238", volume: "100ml", theme: "Holistic Rest · Deep Grounding", description: "A deeply soothing botanical cadence to soften overworked nervous systems and restore equilibrium.", image: "/images/spray_raphael.jpg" },
+            { name: "Archangel Uriel", colorName: "Luminous Gold Ray", colorHex: "#C59B27", volume: "100ml", theme: "Epiphany · Realized Manifestation", description: "Kindles the golden flame of focused intellect, turning abstract ideals into grounded accomplishments.", image: "/images/spray_uriel.jpg" },
+            { name: "Archangel Zadkiel", colorName: "Violet Amethyst Ray", colorHex: "#6B4984", volume: "100ml", theme: "Forgiveness · Spiritual Freedom", description: "Transmutes past regrets into liberating wisdom under the graceful embrace of violet resonance.", image: "/images/spray_zadkiel.jpg" },
           ],
         },
         {

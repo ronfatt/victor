@@ -35,23 +35,82 @@ export default function AuraPremaPage() {
               priority
             />
           </div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase">
-            <Flower2 className="w-3.5 h-3.5 text-[#B99C72]" />
-            <span>AURA PREMA · BOTANICAL FREQUENCY ESSENCES</span>
-          </div>
         </div>
 
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#242129] font-normal leading-tight tracking-tight">
           {isZh ? "Aura Prema 天使花晶与能量灵气瓶" : "Aura Prema Angelic Flower Essences & Reiki Bottles"}
         </h1>
-        <p className="mt-4 text-sm sm:text-base text-[#66616F] leading-relaxed max-w-2xl mx-auto font-sans">
+        <p className="mt-4 text-base sm:text-lg text-[#B99C72] font-serif italic tracking-wide max-w-2xl mx-auto">
           {isZh
-            ? "融合色彩频率、花卉精粹与大天使象征意图。以独角兽神圣频率为灵感，结合阶梯灵气瓶与花晶能量，将觉察与芳香融入日常居家与自我修习中。"
-            : "Synthesizing color resonance, subtle botanical frequencies, and archangelic spiritual contemplation for everyday mindful presence."}
+            ? "透过色彩的映照来 —— 疗愈过去，支持当下，活出可能性。"
+            : "Reflecting through color — healing the past, supporting the present, living into possibility."}
         </p>
 
+        {/* Brand Philosophy Transmission Card */}
+        <div className="mt-10 max-w-3xl mx-auto p-6 sm:p-10 rounded-[28px] bg-white border border-[#E8E3DD] editorial-shadow-elevated text-left space-y-6">
+          <p className="text-sm sm:text-base text-[#4A4553] leading-relaxed font-sans">
+            {isZh
+              ? "里边能量源自于 花朵精华，海洋精华，色彩精华，独角兽 与 天使 的结合性能量疗愈产品。主要支持一个人平衡负面情绪与思绪，提升运气，协助意识的开展 与 达到环境的能量调和。"
+              : "Infused with vibrational energies from botanical flower essences, ocean essences, color frequencies, and the sacred synergy of unicorns and angels. Formulated to help individuals balance negative emotions, elevate personal luck, unfold conscious awareness, and harmonize environmental resonance."}
+          </p>
+
+          {/* Aura & Prema Meaning Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#FAF9F6] border border-[#E8E3DD] flex items-center gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#EBE5F0] text-[#2D233C] flex items-center justify-center font-serif font-bold text-base shrink-0">
+                A
+              </div>
+              <div>
+                <h4 className="font-serif text-sm font-semibold text-[#2D233C]">
+                  {isZh ? "Aura 气场与光" : "Aura"}
+                </h4>
+                <p className="text-xs text-[#66616F] font-sans mt-0.5">
+                  {isZh ? "代表气场，代表光" : "Represents the personal auric field and divine light"}
+                </p>
+              </div>
+            </div>
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#FAF9F6] border border-[#E8E3DD] flex items-center gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#F7EBE5] text-[#9B5A3C] flex items-center justify-center font-serif font-bold text-base shrink-0">
+                P
+              </div>
+              <div>
+                <h4 className="font-serif text-sm font-semibold text-[#2D233C]">
+                  {isZh ? "Prema 神性之爱" : "Prema"}
+                </h4>
+                <p className="text-xs text-[#66616F] font-sans mt-0.5">
+                  {isZh ? "代表神性的爱 与 滋养" : "Represents divine unconditional love and nourishment"}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4 text-xs sm:text-sm text-[#66616F] font-sans leading-relaxed">
+            <p>
+              {isZh
+                ? "在自然界中，［水晶 - 花朵 - 色彩 - 天使 ］拥有不同高-中-低，充满生生不息 与 和谐的自然波长，能够对应到人体的脉轮 与 情绪思绪。运用产品将能够产生气场的共振来协调心灵 与 灵性能量失衡的地方给抚平。"
+                : "In nature, [Crystals · Flowers · Colors · Angels] possess varied high, medium, and low wavelengths teeming with continuous vitality and harmony. Resonating with human chakras and thoughts, these essences harmonize the heart and soothe energetic imbalances."}
+            </p>
+            <p>
+              {isZh
+                ? "色彩的能量波长 是绝佳自我觉察的工具之一，在 Aura Prema 天使花晶 的体系里，你可以学习到如何透过不同瓶子所选择的颜色来理解自身各方面的心理约束给理清。使用产品的优质能量将支持你创造自在人生。"
+                : "Color wavelength is one of the most potent mirrors for self-awareness. Within the Aura Prema system, exploring chosen flacon colors illuminates unconscious psychological patterns, supporting you in crafting an authentic and liberated life."}
+            </p>
+            <div className="p-4 rounded-2xl bg-[#FAF9F6]/80 border-l-4 border-[#B99C72] text-[#4A4553]">
+              <p className="font-medium text-xs sm:text-[13px] mb-1 text-[#2D233C]">
+                {isZh ? "独特能量化过程产生的活性波动：" : "Unique Energetic Activation Process:"}
+              </p>
+              <p className="text-xs text-[#66616F] leading-relaxed">
+                {isZh
+                  ? "每一种类都小心翼翼的选择最合适的香氛，花朵精华，以及 柔和的灵性能量化 。Mikhael Victor 老师会直接连接特定色彩天使与独角兽的祝福来优化瓶子里的能量质地，增加瓶子里的精细波动，形成你们看到生生不息的瓶子，后，才交到顾客手里。"
+                  : "Every variant is formulated with meticulously selected fragrances, botanical flower essences, and gentle energetic activation. Teacher Mikhael Victor connects directly with specific color angels and unicorn blessings to refine each flacon's subtle vibration before it is placed into clients' hands."}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Clear Compliance Disclaimer */}
-        <div className="mt-8 p-5 rounded-2xl bg-white border border-[#E8E3DD] text-xs text-[#66616F] max-w-2xl mx-auto leading-relaxed editorial-shadow-subtle">
+        <div className="mt-8 p-5 rounded-2xl bg-white border border-[#E8E3DD] text-xs text-[#66616F] max-w-3xl mx-auto leading-relaxed editorial-shadow-subtle">
           <div className="flex items-start gap-3">
             <AlertCircle className="w-4 h-4 text-[#B99C72] flex-shrink-0 mt-0.5" />
             <p className="text-left text-[11px] font-sans">
