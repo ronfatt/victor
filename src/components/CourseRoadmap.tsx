@@ -81,19 +81,21 @@ export function CourseRoadmap({ onSelectLevel }: CourseRoadmapProps) {
               </div>
 
               {/* Card Footer Format & Prerequisite */}
-              <div className="mt-6 pt-4 border-t border-[#E8E3DD]/70 text-[11px] text-[#58535F] space-y-1.5">
-                {lvl.format && (
-                  <div className="flex items-center gap-1.5 text-[#2D233C] font-medium font-sans">
-                    <Calendar className="w-3.5 h-3.5 text-[#B99C72] flex-shrink-0" />
-                    <span>{lvl.format}</span>
-                  </div>
-                )}
-                {lvl.prerequisite && (
-                  <div className="text-[10.5px] text-[#8E8795] truncate font-sans">
-                    {isZh ? "前置条件：" : "Prereq: "}{lvl.prerequisite}
-                  </div>
-                )}
-              </div>
+              {(lvl.format || lvl.prerequisite) && (
+                <div className="mt-6 pt-4 border-t border-[#E8E3DD]/70 text-[11px] text-[#58535F] space-y-1.5">
+                  {lvl.format && (
+                    <div className="flex items-center gap-1.5 text-[#2D233C] font-medium font-sans">
+                      <Calendar className="w-3.5 h-3.5 text-[#B99C72] flex-shrink-0" />
+                      <span>{lvl.format}</span>
+                    </div>
+                  )}
+                  {lvl.prerequisite && (
+                    <div className="text-[10.5px] text-[#8E8795] truncate font-sans">
+                      {isZh ? "前置条件：" : "Prereq: "}{lvl.prerequisite}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           );
         })}
