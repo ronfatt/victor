@@ -70,6 +70,7 @@ export interface AuraProductVariant {
   volume: string;
   theme: string;
   description: string;
+  image?: string;
 }
 
 export interface AuraCategory {

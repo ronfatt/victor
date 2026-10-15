@@ -240,32 +240,47 @@ export default function AuraPremaPage() {
                     </span>
                   </div>
 
-                  {/* Luxury Packshot Frame with Frosted Flacon Silhouette */}
-                  <div className="aspect-[4/3] rounded-2xl bg-gradient-to-b from-[#F7F3EE] via-[#EFEAE5] to-[#E2DCE0] border border-[#E8E3DD] flex flex-col items-center justify-center p-6 mb-5 relative overflow-hidden group-hover:border-[#ADA0BE]/60 transition-colors">
-                    {/* Subtle Refraction Halo Behind Bottle */}
-                    <div
-                      className="absolute w-24 h-24 rounded-full blur-xl opacity-35"
-                      style={{ backgroundColor: item.colorHex }}
-                    />
-
-                    {/* Minimalist Flacon Cylinder */}
-                    <div className="relative z-10 flex flex-col items-center">
-                      <div className="w-4 h-3 rounded-t-xs bg-[#B99C72] border-b border-black/10" />
-                      <div className="w-3 h-1.5 bg-[#E8E3DD]" />
-                      <div
-                        className="w-10 h-24 rounded-t-sm rounded-b-md shadow-md border border-white/60 flex items-center justify-center text-white text-[10px] font-serif tracking-widest relative overflow-hidden"
-                        style={{
-                          background: `linear-gradient(180deg, rgba(255,255,255,0.7) 0%, ${item.colorHex} 40%, #2D233C 100%)`,
-                        }}
-                      >
-                        <span className="opacity-80">AP</span>
+                  {/* Real Studio Packshot Photo or Minimalist Flacon Cylinder */}
+                  {item.image ? (
+                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#FAF9F6] border border-[#E8E3DD] mb-5 group-hover:border-[#ADA0BE]/60 transition-colors">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-widest text-white/90 uppercase">
+                        REAL PACKSHOT
                       </div>
                     </div>
+                  ) : (
+                    <div className="aspect-[4/3] rounded-2xl bg-gradient-to-b from-[#F7F3EE] via-[#EFEAE5] to-[#E2DCE0] border border-[#E8E3DD] flex flex-col items-center justify-center p-6 mb-5 relative overflow-hidden group-hover:border-[#ADA0BE]/60 transition-colors">
+                      {/* Subtle Refraction Halo Behind Bottle */}
+                      <div
+                        className="absolute w-24 h-24 rounded-full blur-xl opacity-35"
+                        style={{ backgroundColor: item.colorHex }}
+                      />
 
-                    <span className="absolute bottom-2.5 text-[8.5px] uppercase font-mono tracking-widest text-[#8E8795]/80">
-                      FLACON SPEC // {item.volume}
-                    </span>
-                  </div>
+                      {/* Minimalist Flacon Cylinder */}
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-4 h-3 rounded-t-xs bg-[#B99C72] border-b border-black/10" />
+                        <div className="w-3 h-1.5 bg-[#E8E3DD]" />
+                        <div
+                          className="w-10 h-24 rounded-t-sm rounded-b-md shadow-md border border-white/60 flex items-center justify-center text-white text-[10px] font-serif tracking-widest relative overflow-hidden"
+                          style={{
+                            background: `linear-gradient(180deg, rgba(255,255,255,0.7) 0%, ${item.colorHex} 40%, #2D233C 100%)`,
+                          }}
+                        >
+                          <span className="opacity-80">AP</span>
+                        </div>
+                      </div>
+
+                      <span className="absolute bottom-2.5 text-[8.5px] uppercase font-mono tracking-widest text-[#8E8795]/80">
+                        FLACON SPEC // {item.volume}
+                      </span>
+                    </div>
+                  )}
 
                   <h3 className="font-serif text-xl text-[#2D233C] font-normal leading-snug">
                     {item.name}
