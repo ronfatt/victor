@@ -58,12 +58,12 @@ export const siteConfig: SiteConfig = {
   contact: {
     whatsappNumber: "60162680663", // Official WhatsApp contact number (+60 16-268 0663)
     whatsappFormatted: "+60 16-268 0663",
-    email: "consultation@mikhaelvictor.com",
+    email: "loverippleslight@yahoo.com",
     phoneDisplay: "+60 16-268 0663",
     wechatId: "MikhaelVictor_Official",
     instagramHandle: "@mikhaelvictor.official",
-    addressNoteEn: "Private Consultation Studio, Klang, Selangor, Malaysia (Full address provided upon booking confirmation)",
-    addressNoteZh: "马来西亚雪兰莪州巴生私人咨询工作室（确切地址于确认预约后发送）",
+    addressNoteEn: "I.S.G.A Light Centre (By Appointment): 10am - 8pm",
+    addressNoteZh: "I.S.G.A 光中心 (预约式)：10am - 8pm",
   },
   verificationStatus: {
     isLive: false,

@@ -35,89 +35,98 @@ export default function ContactPage() {
     <div className="py-12 sm:py-20 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF9F6] border border-[#E8E3DD] text-[#2D233C] text-[10px] font-semibold tracking-[0.2em] uppercase mb-4 shadow-[0_2px_8px_rgba(45,35,60,0.03)]">
-            <MapPin className="w-3.5 h-3.5 text-[#B99C72]" />
-            <span>STUDIO & GENERAL ENQUIRIES</span>
-          </div>
-          <h1 className="font-serif text-3xl sm:text-5xl text-[#2D233C] font-normal leading-tight">
-            {isZh ? "联系与工作室信息" : "Contact & Studio Location"}
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2D233C] font-normal leading-tight">
+            {isZh ? "预约，参访 与 合作，请联系：" : "For Bookings, Visits & Collaborations, Please Contact:"}
           </h1>
-          <p className="mt-3 text-xs sm:text-sm text-[#666070] leading-relaxed max-w-lg mx-auto">
-            {isZh
-              ? "常驻马来西亚巴生，提供全球线上及中心预约面谈服务。请通过下方渠道与团队取得联系。"
-              : "Based in Klang, Selangor, Malaysia. Consultations available worldwide via Zoom and in-person by appointment."}
-          </p>
         </div>
 
         {/* 2-Column Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start max-w-6xl mx-auto">
-          {/* Left: Contact Info & Placeholders */}
+          {/* Left: Contact Info */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-8 sm:p-9 rounded-[24px] bg-white border border-[#E8E3DD] shadow-[0_4px_24px_rgba(45,35,60,0.03)] space-y-6">
-              <div>
-                <span className="text-[10px] font-mono tracking-widest uppercase text-[#B99C72] block mb-2">
-                  CONSULTATION SANCTUARY
-                </span>
-                <h3 className="font-serif text-2xl text-[#2D233C]">
-                  {isZh ? "巴生私人咨询工作室" : "Klang Private Studio"}
-                </h3>
-                <p className="text-xs text-[#666070] mt-1.5 leading-relaxed">
-                  {isZh ? siteConfig.contact.addressNoteZh : siteConfig.contact.addressNoteEn}
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-[#E8E3DD] space-y-4 text-xs">
-                <div className="flex items-start gap-3">
-                  <Globe className="w-4 h-4 text-[#ADA0BE] mt-0.5 flex-shrink-0" />
+              <div className="space-y-5 text-sm">
+                {/* Centre & Hours */}
+                <div className="flex items-start gap-3.5">
+                  <Clock className="w-5 h-5 text-[#B99C72] mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-medium text-[#2D233C] block">
-                      {isZh ? "咨询语言" : "Languages"}
+                    <span className="font-serif font-medium text-base text-[#2D233C] block">
+                      {isZh ? "I.S.G.A 光中心 (预约式)" : "I.S.G.A Light Centre (By Appointment)"}
                     </span>
-                    <span className="text-[#666070]">
-                      {isZh ? "中文普通话 (Mandarin) / English" : "Mandarin Chinese & English"}
+                    <span className="text-[#666070] font-sans text-xs">
+                      {isZh ? "开放时段：10am - 8pm" : "Opening Hours: 10:00 AM – 8:00 PM"}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-[#B99C72] mt-0.5 flex-shrink-0" />
+                {/* Facebook */}
+                <div className="flex items-start gap-3.5 pt-4 border-t border-[#E8E3DD]">
+                  <Globe className="w-5 h-5 text-[#3b5998] mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-medium text-[#2D233C] block">
-                      {isZh ? "预约时段" : "Hours"}
+                    <span className="font-serif font-medium text-base text-[#2D233C] block">
+                      {isZh ? "脸书页面" : "Facebook Page"}
                     </span>
-                    <span className="text-[#666070]">
-                      {isZh ? "周一至周六 10:00 - 18:00 (全预约制)" : "Mon - Sat: 10:00 - 18:00 (Strictly by appointment)"}
-                    </span>
+                    <a
+                      href="https://www.facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#666070] hover:text-[#2D233C] font-sans text-xs transition-colors underline decoration-dotted"
+                    >
+                      {isZh ? "天使灵性导师 Victor" : "Angelic Spiritual Mentor Victor"}
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <MessageSquare className="w-4 h-4 text-[#25D366] mt-0.5 flex-shrink-0" />
+                {/* WhatsApp */}
+                <div className="flex items-start gap-3.5 pt-4 border-t border-[#E8E3DD]">
+                  <MessageSquare className="w-5 h-5 text-[#25D366] mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-medium text-[#2D233C] block">
+                    <span className="font-serif font-medium text-base text-[#2D233C] block">
                       WhatsApp
                     </span>
-                    <span className="text-[#666070] font-mono text-[11px]">
-                      {siteConfig.contact.whatsappFormatted}
+                    <a
+                      href="https://wa.me/60162680663"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#25D366] hover:underline font-mono text-xs font-semibold"
+                    >
+                      +60 16 2680 663
+                    </a>
+                  </div>
+                </div>
+
+                {/* Other Channels */}
+                <div className="flex items-start gap-3.5 pt-4 border-t border-[#E8E3DD]">
+                  <MapPin className="w-5 h-5 text-[#ADA0BE] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="font-serif font-medium text-base text-[#2D233C] block">
+                      {isZh ? "多元即时通讯" : "Instant Messaging"}
+                    </span>
+                    <span className="text-[#666070] font-sans text-xs">
+                      {isZh ? "也可以透过 Line, WeChat, Telegram 联络到老师。" : "You can also connect with the mentor via Line, WeChat, or Telegram."}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-[#ADA0BE] mt-0.5 flex-shrink-0" />
+                {/* Email */}
+                <div className="flex items-start gap-3.5 pt-4 border-t border-[#E8E3DD]">
+                  <Mail className="w-5 h-5 text-[#B99C72] mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-medium text-[#2D233C] block">
-                      {isZh ? "官方电子邮箱" : "Official Email"}
+                    <span className="font-serif font-medium text-base text-[#2D233C] block">
+                      {isZh ? "电子邮件" : "Email"}
                     </span>
-                    <span className="text-[#666070] font-mono text-[11px]">
-                      {siteConfig.contact.email}
-                    </span>
+                    <a
+                      href="mailto:loverippleslight@yahoo.com"
+                      className="text-[#666070] hover:text-[#2D233C] font-mono text-xs underline decoration-dotted transition-colors"
+                    >
+                      loverippleslight@yahoo.com
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Direct WhatsApp Action */}
+              {/* Direct WhatsApp Action Button */}
               <div className="pt-2">
                 <a
                   href={directWhatsApp}
@@ -129,16 +138,6 @@ export default function ContactPage() {
                   <span>{isZh ? "通过 WhatsApp 发起咨询 ↗" : "Launch WhatsApp Chat ↗"}</span>
                 </a>
               </div>
-            </div>
-
-            {/* Privacy & Safety Note */}
-            <div className="p-5 rounded-2xl bg-[#F7F4F0] border border-[#E8E3DD] flex items-start gap-3 text-xs text-[#666070]">
-              <AlertCircle className="w-4 h-4 text-[#B99C72] flex-shrink-0 mt-0.5" />
-              <p className="leading-relaxed text-[11px]">
-                {isZh
-                  ? "为确保个案之安静专注与隐私，恕不接待无预约登门。所有准确门牌及泊车位置均于预约确认函中发送。"
-                  : "To protect client privacy, walk-ins are strictly not admitted. Studio address provided upon confirmed booking."}
-              </p>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import { Calendar, Lock, ChevronRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -53,11 +54,28 @@ export function CourseRoadmap({ onSelectLevel }: CourseRoadmapProps) {
                 <h3 className="font-serif text-xl text-[#2D233C] font-normal leading-snug">
                   {lvl.title}
                 </h3>
-                <p className="text-[11px] text-[#ADA0BE] font-mono tracking-wide mt-1 mb-3.5">
-                  {lvl.subtitle}
-                </p>
+                {lvl.subtitle && (
+                  <p className="text-[11px] text-[#ADA0BE] font-mono tracking-wide mt-1 mb-3.5">
+                    {lvl.subtitle}
+                  </p>
+                )}
 
-                <p className="text-xs text-[#66616F] leading-relaxed line-clamp-3 font-sans">
+                {lvl.image && (
+                  <div className="my-3.5 rounded-xl overflow-hidden aspect-[16/10] relative border border-[#E8E3DD]">
+                    <Image
+                      src={lvl.image}
+                      alt={lvl.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
+                    />
+                    <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-black/60 text-[9px] font-mono text-white backdrop-blur-xs">
+                      {isZh ? "专属灵修法器" : "Sacred Instrument"}
+                    </span>
+                  </div>
+                )}
+
+                <p className="text-xs text-[#66616F] leading-relaxed line-clamp-4 font-sans whitespace-pre-line mt-2">
                   {lvl.description}
                 </p>
               </div>
@@ -82,11 +100,11 @@ export function CourseRoadmap({ onSelectLevel }: CourseRoadmapProps) {
       </div>
 
       {/* Selected Level Deep-Dive Highlight Box */}
-      <div className="p-7 sm:p-9 rounded-[26px] bg-gradient-to-r from-[#F6F3F9] via-white to-[#FAF9F6] border border-[#ADA0BE]/40 editorial-shadow-subtle flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden">
+      <div className="p-7 sm:p-9 rounded-[26px] bg-gradient-to-r from-[#F6F3F9] via-white to-[#FAF9F6] border border-[#ADA0BE]/40 editorial-shadow-subtle flex flex-col md:flex-row md:items-start justify-between gap-6 relative overflow-hidden">
         {/* Subtle Ethereal Refraction Accent */}
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-gradient-to-bl from-[#D5CEE0]/20 to-transparent blur-2xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-2xl">
+        <div className="relative z-10 max-w-2xl flex-1">
           <div className="flex items-center gap-2 mb-2">
             <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />
             <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[#ADA0BE]">
@@ -105,23 +123,37 @@ export function CourseRoadmap({ onSelectLevel }: CourseRoadmapProps) {
               <h4 className="font-serif text-2xl text-[#2D233C] font-normal">
                 {sec.levels[activeLevel].title}
               </h4>
-              <p className="text-xs sm:text-sm text-[#58535F] mt-2 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-[#58535F] mt-3 leading-relaxed font-sans whitespace-pre-line">
                 {sec.levels[activeLevel].description}
               </p>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {onSelectLevel && (
-          <button
-            type="button"
-            onClick={() => onSelectLevel(sec.levels[activeLevel].title)}
-            className="relative z-10 px-6 py-3 rounded-full bg-[#2D233C] text-white text-xs font-medium hover:bg-[#443659] transition-all shadow-sm flex items-center justify-center gap-2 whitespace-nowrap self-start md:self-auto"
-          >
-            <span>{isZh ? "咨询此修习阶段排程" : "Inquire Stage Schedule"}</span>
-            <ChevronRight className="w-3.5 h-3.5" />
-          </button>
-        )}
+        <div className="relative z-10 flex flex-col items-start md:items-end gap-4 self-start md:self-auto flex-shrink-0">
+          {sec.levels[activeLevel].image && (
+            <div className="w-28 sm:w-32 aspect-square rounded-2xl overflow-hidden relative border border-[#E8E3DD] shadow-sm">
+              <Image
+                src={sec.levels[activeLevel].image!}
+                alt={sec.levels[activeLevel].title}
+                fill
+                sizes="128px"
+                className="object-cover"
+              />
+            </div>
+          )}
+
+          {onSelectLevel && (
+            <button
+              type="button"
+              onClick={() => onSelectLevel(sec.levels[activeLevel].title)}
+              className="px-6 py-3 rounded-full bg-[#2D233C] text-white text-xs font-medium hover:bg-[#443659] transition-all shadow-sm flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              <span>{isZh ? "咨询此修习阶段排程" : "Inquire Stage Schedule"}</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

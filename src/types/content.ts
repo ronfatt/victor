@@ -41,6 +41,7 @@ export interface MeditationLevel {
   duration?: string;
   format?: string;
   prerequisite?: string;
+  image?: string;
 }
 
 export interface TimelineEntry {

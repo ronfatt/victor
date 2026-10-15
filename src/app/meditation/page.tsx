@@ -130,8 +130,8 @@ export default function MeditationPage() {
 
           <h3 className="font-serif text-2xl sm:text-3xl text-[#2D233C] font-normal">
             {isZh
-              ? "第二阶段 · Atma Jyoti 第八脉轮启动（4天跨双周末）"
-              : "Stage 02 · Atma Jyoti Activation (4 In-Person Days Across 2 Weekends)"}
+              ? "第二课 · Atma Jyoti 第八脉轮启动（4天跨双周末）"
+              : "Lesson 02 · Atma Jyoti Activation (4 In-Person Days Across 2 Weekends)"}
           </h3>
 
           <p className="text-xs sm:text-sm text-[#58535F] leading-relaxed font-sans">
@@ -146,7 +146,7 @@ export default function MeditationPage() {
                 {isZh ? "严谨前置条件" : "Prerequisites"}
               </span>
               <p className="text-[#66616F] font-sans">
-                {isZh ? "须完整修毕心轮预备课与 Shuddhi 阶段，且经老师评估身心状态平稳。" : "Must have completed Heart Meditation and Shuddhi, validated by mentor."}
+                {isZh ? "须完整修毕心轮预备课并规律锻炼第一课，且经老师评估身心状态平稳。" : "Must have completed Heart Meditation and practiced Lesson 01 regularly."}
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-[#FAF9F6] border border-[#E8E3DD] text-xs">
