@@ -7,7 +7,6 @@ import { BookingModal } from '@/components/BookingModal';
 import { buildWhatsAppLink } from '@/config/siteConfig';
 import {
   Flower2,
-  Lock,
   MessageSquare,
   AlertCircle
 } from 'lucide-react';
@@ -113,8 +112,8 @@ export default function AuraPremaPage() {
           {[
             {
               src: "/images/real_reiki_bottles.jpg",
-              title: isZh ? "脉轮灵气瓶架" : "Chakra Reiki Rack",
-              desc: isZh ? "阶梯架与多色平衡瓶" : "Tiered chakra frequency bottles"
+              title: isZh ? "三角形架灵气瓶" : "Triangle Reiki Bottles",
+              desc: isZh ? "神圣几何三角架与14色灵气瓶" : "Sacred geometry rack with 14 color flacons"
             },
             {
               src: "/images/real_mandala_ritual.jpg",
@@ -183,9 +182,42 @@ export default function AuraPremaPage() {
           </p>
         </div>
 
-        {/* Category Content: Items or Forthcoming Slot */}
-        {selectedCategory.status === 'available' && selectedCategory.items ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Triangle Rack Spotlight when viewing Reiki Bottles */}
+        {selectedCategory.id === 'reiki-bottles' && (
+          <div className="max-w-4xl mx-auto mb-12 p-6 sm:p-8 rounded-[28px] bg-white border border-[#E8E3DD] flex flex-col md:flex-row items-center gap-6 sm:gap-8 editorial-shadow-subtle">
+            <div className="relative w-full md:w-56 aspect-[4/3] rounded-2xl overflow-hidden bg-[#FAF9F6] shrink-0 border border-[#E8E3DD]">
+              <Image
+                src="/images/real_reiki_bottles.jpg"
+                alt="三角形架灵气瓶"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-2 text-center md:text-left">
+              <span className="text-[10px] font-mono tracking-widest text-[#B99C72] uppercase font-semibold block">
+                SACRED GEOMETRY DISPLAY // 14 FREQUENCIES
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl text-[#2D233C] font-normal">
+                {isZh ? "经典神圣几何三角形架 · 14 款光波频率灵气瓶" : "Sacred Geometry Triangle Rack · 14 Frequency Flacons"}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#66616F] font-sans leading-relaxed">
+                {isZh
+                  ? "以神圣几何三角形态陈列，汇聚自海底轮至顶轮与高阶意识的14种色彩精微振频，为个人气场与静坐空间提供深层共鸣与能量护持。"
+                  : "Arranged in sacred geometric alignment, synthesizing 14 optical and botanical frequencies from root to crown and transcendent realms."}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Category Content: Items */}
+        {selectedCategory.items && selectedCategory.items.length > 0 && (
+          <div
+            className={`grid grid-cols-1 ${
+              selectedCategory.items.length === 1
+                ? 'max-w-md mx-auto'
+                : 'md:grid-cols-2 lg:grid-cols-3'
+            } gap-8`}
+          >
             {selectedCategory.items.map((item, idx) => (
               <div
                 key={idx}
@@ -261,26 +293,6 @@ export default function AuraPremaPage() {
                 </div>
               </div>
             ))}
-          </div>
-        ) : (
-          /* Slot 4: Details Forthcoming */
-          <div className="max-w-2xl mx-auto p-12 sm:p-16 rounded-[28px] bg-white border border-[#E8E3DD] text-center space-y-4 editorial-shadow-elevated">
-            <div className="w-16 h-16 rounded-full bg-[#FAF9F6] border border-[#E8E3DD] flex items-center justify-center text-[#ADA0BE] mx-auto shadow-2xs">
-              <Lock className="w-6 h-6" />
-            </div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#2D233C] font-normal">
-              {isZh ? "第四系列产品（研发资料整理中）" : "Fourth Product Line (In Development)"}
-            </h3>
-            <p className="text-xs sm:text-sm text-[#66616F] leading-relaxed max-w-lg mx-auto font-sans">
-              {isZh
-                ? "Mikhael Victor 老师正在整理新一轮天然花精配方与觉察辅助媒介。由于原始资料尚未公布具体品类名称与成分，本站严格遵循客观规范，待正式发布后上线呈现。"
-                : "Mikhael Victor is formulating new botanical frequency editions. In strict accordance with factual integrity, details remain withheld until official release."}
-            </p>
-            <div className="pt-2">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#FAF9F6] border border-[#E8E3DD] text-[#8E8795] text-[10px] font-mono uppercase tracking-wider">
-                Status: Details Forthcoming
-              </span>
-            </div>
           </div>
         )}
       </section>

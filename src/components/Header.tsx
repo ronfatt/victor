@@ -162,7 +162,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                       {isZh ? "Aura Prema 天使花晶" : "Aura Prema Essences"}
                     </span>
                     <span className="text-[11px] text-[#66616F] font-sans">
-                      {isZh ? "七大天使喷雾与色彩日常觉察" : "7 Archangel Sprays & 12 Quintessences"}
+                      {isZh ? "能量喷雾、灵气瓶与气场沐浴露" : "Energy Sprays, Reiki Bottles & Shower Gel"}
                     </span>
                   </Link>
 
