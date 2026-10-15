@@ -87,18 +87,36 @@ export default function SessionsPage() {
           opacity="opacity-[0.035] sm:opacity-[0.05]"
         />
 
-        <div className="relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />
-          <span>ANGELIC GUIDANCE & ALT THERAPY SUITE</span>
-        </div>
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#242129] font-normal leading-tight tracking-tight">
           {isZh ? "天使灵性占卜与 ALT 天使源疗" : "Angelic Readings & ALT Therapy"}
         </h1>
-        <p className="mt-4 text-sm sm:text-base text-[#66616F] leading-relaxed font-sans max-w-2xl mx-auto">
-          {isZh
-            ? "融合一对一象征卡牌占卜与老师原创 ALT 天使源疗深度仪式。涵盖 20/60 分钟牌卡直觉解读，以及 90 分钟招牌身心重置与深度静心体验。线上视频与巴生工作室面对面皆可预约。"
-            : "Integrating 1-on-1 intuitive card readings with Victor's signature 90-minute ALT restorative ritual. Available via Zoom or in-person at Klang studio."}
-        </p>
+
+        {/* Editorial Guidance Transmission Card */}
+        <div className="mt-8 max-w-3xl mx-auto p-6 sm:p-10 rounded-[28px] bg-white border border-[#E8E3DD] editorial-shadow-elevated text-left space-y-5">
+          <p className="text-sm sm:text-base text-[#4A4553] leading-relaxed font-sans font-medium">
+            {isZh
+              ? "也许你需要的是一位走在你前面，带有成熟经验的导师来指导看见你的心理 与 能量盲点，一步步的指引 并 拆解掉负面情绪，扭曲观点 与 信念的来源。"
+              : "Perhaps what you need is an experienced mentor walking ahead of you, illuminating unconscious psychological and energetic blind spots while methodically untangling negative emotions, distorted perceptions, and limiting core beliefs."}
+          </p>
+
+          <p className="text-xs sm:text-sm text-[#66616F] leading-relaxed font-sans">
+            {isZh
+              ? "Mikhael Victor 老师 拥有明确的直觉，灵视 与深度聆听的能力，他能清晰的看见 脉轮 与 气场 的问题根源，并 重塑健康观点，调频个人能量回到真实自主权，爱 与 内在力量。"
+              : "Teacher Mikhael Victor possesses clear intuition, spiritual sight, and deep listening, discerning the root disharmonies across chakras and the auric field to realign your personal frequency back into authentic sovereignty, love, and inner power."}
+          </p>
+
+          <p className="text-xs sm:text-sm text-[#66616F] leading-relaxed font-sans">
+            {isZh
+              ? "无论你是经验丰富的事业者，还是刚踏入身心灵领域的习者，这［天使灵性占卜］都将从你的起点出发，协助你理清方向、建立自信、与 迈向内在沉稳 与 和谐道路。"
+              : "Whether you are a seasoned entrepreneur or a seeker newly exploring spirituality, this Angelic Consultation begins precisely where you stand—clarifying your trajectory, anchoring self-trust, and guiding you toward grounded inner harmony."}
+          </p>
+
+          <div className="p-4 rounded-2xl bg-[#FAF9F6] border border-[#E8E3DD] text-xs sm:text-sm text-[#2D233C] font-sans text-center font-medium">
+            {isZh
+              ? "如果你准备好活出你的灵魂道路，疗愈使命、拓展事业影响力，欢迎预约以下不同配套哦"
+              : "If you are ready to live your soul's authentic path, embrace your healing calling, and expand your life impact, welcome to explore our consultation packages below."}
+          </div>
+        </div>
       </section>
 
       {/* Atmosphere Sanctuary Plate */}
@@ -124,7 +142,7 @@ export default function SessionsPage() {
             </div>
             <div className="max-w-xl">
               <p className="font-serif text-lg sm:text-2xl font-normal drop-shadow-sm">
-                {isZh ? "安静、沉静、不带批判的倾听空间" : "A Quiet, Unhurried Space for Clear Inner Dialogue"}
+                {isZh ? "清晰直觉 · 深度聆听 · 调频重塑个人能量" : "Clear Intuition · Deep Listening · Sovereign Realignment"}
               </p>
               <p className="text-xs text-white/80 font-sans mt-1">
                 {isZh ? "* 线上远程视频或巴生工作室面对面预约" : "* Available via online video consultation or in-person in Klang studio"}

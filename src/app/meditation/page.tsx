@@ -32,27 +32,38 @@ export default function MeditationPage() {
           opacity="opacity-[0.035] sm:opacity-[0.05]"
         />
 
-        <div className="relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE5F0] text-[#2D233C] text-[10px] font-mono tracking-[0.2em] uppercase mb-4">
-          <Layers className="w-3.5 h-3.5 text-[#B99C72]" />
-          <span>I.S.G.A. PROGRESSIVE MEDITATION PATHWAY</span>
-        </div>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#242129] font-normal leading-tight tracking-tight">
-          {isZh ? "静下来，在规律练习中认识自己" : "Find Stillness · Discover Awareness"}
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#242129] font-normal leading-tight tracking-tight max-w-3xl mx-auto">
+          {isZh ? "I.S.G.A. 静坐修习体系" : "I.S.G.A. Meditation System"}
         </h1>
-        <p className="mt-4 text-sm sm:text-base text-[#66616F] leading-relaxed max-w-2xl mx-auto font-sans">
-          {isZh
-            ? "I.S.G.A. 是一套阶梯递进的现代静坐修习系统。由心轮静心预备课起步，学员依据每日实修自律与导师评估逐步深入，摒弃神秘妄念，建立稳定的内在定力。"
-            : "I.S.G.A. is a progressive meditation curriculum, beginning with the Heart Meditation and advancing by personal practice maturity under mentor guidance."}
-        </p>
 
-        {/* Responsible Boundaries Disclaimer */}
-        <div className="mt-8 p-5 rounded-2xl bg-white border border-[#E8E3DD] text-xs text-[#66616F] max-w-2xl mx-auto leading-relaxed editorial-shadow-subtle">
-          <div className="flex items-start gap-3">
-            <AlertCircle className="w-4 h-4 text-[#B99C72] flex-shrink-0 mt-0.5" />
-            <p className="text-left text-[11px] font-sans">
+        <blockquote className="mt-5 text-base sm:text-lg text-[#B99C72] font-serif italic tracking-wide max-w-2xl mx-auto leading-relaxed">
+          {isZh
+            ? "“规律，有效率的静坐能把思绪与心静下来，调节神经系统，踏实的透过修习来开启高维脉轮中心，你才能开展稳定的灵性天赋。”"
+            : "“Disciplined, efficient meditation quietens thoughts and the heart, regulates the nervous system, and grounded practice activates higher-dimensional chakra centers, allowing you to steadily unfold your spiritual gifts.”"}
+        </blockquote>
+
+        {/* Editorial Guidance Transmission Card */}
+        <div className="mt-8 max-w-3xl mx-auto p-6 sm:p-10 rounded-[28px] bg-white border border-[#E8E3DD] editorial-shadow-elevated text-left space-y-5">
+          <p className="text-sm sm:text-base text-[#4A4553] font-medium leading-relaxed font-sans">
+            {isZh
+              ? "在 I.S.G.A 静坐里，你将会学习到如何开启位于头部的灵性中心（眉心轮以上 与 第八脉轮衔接）来稳定开展你的灵性天赋。"
+              : "In I.S.G.A. Meditation, you will learn how to activate the spiritual centers situated above the brow chakra and connected with the 8th chakra, steadily unfolding your spiritual gifts."}
+          </p>
+
+          <p className="text-xs sm:text-sm text-[#66616F] leading-relaxed font-sans">
+            {isZh
+              ? "I.S.G.A 静坐 是 一门能够协助一个人深入自身的心灵 与 提升灵性成长的静坐方式。"
+              : "I.S.G.A. Meditation is a discipline that assists an individual in delving deep into their own heart and elevating their spiritual growth."}
+          </p>
+
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#FAF9F6] border border-[#E8E3DD] space-y-2 text-xs sm:text-sm text-[#4A4553] font-sans">
+            <span className="font-semibold text-[#2D233C] block font-serif">
+              {isZh ? "修习三大核心支柱：" : "Three Core Practice Pillars:"}
+            </span>
+            <p className="text-[#66616F] leading-relaxed">
               {isZh
-                ? "说明：静坐修习旨在培养注意力专注、呼吸调和与身心觉察，属于东方及西方哲学实践传统，绝不宣称任何已被现代医学与物理学实证的特异功能或生理医疗效果。"
-                : "Notice: Meditation practices are contemplative philosophical disciplines cultivating focus and somatic mindfulness. They make zero claims of scientifically established supernatural mechanisms or medical cures."}
+                ? "主要专注于 —— 梵文真言，脉轮观想，与 调频呼吸 来达到 静思，深入高我的触碰，净化气场的旧结构业力，守护灵魂意识 与 开展稳定的灵性成长。"
+                : "Focusing primarily on Sanskrit Mantras, Chakra Visualizations, and Frequency-Tuned Breathwork to achieve contemplation, contact with the Higher Self, clearing old auric karmic patterns, guarding soul consciousness, and unfolding stable spiritual growth."}
             </p>
           </div>
         </div>
@@ -81,10 +92,10 @@ export default function MeditationPage() {
             </div>
             <div className="max-w-xl">
               <p className="font-serif text-lg sm:text-2xl font-normal drop-shadow-sm">
-                {isZh ? "摒弃神秘妄念 · 建立稳定的内在定力" : "Grounded Mindfulness · Cultivating Inner Stillness"}
+                {isZh ? "开启头部灵性中心 · 稳定开展灵性天赋" : "Activating Higher Centers · Unfolding Spiritual Gifts"}
               </p>
               <p className="text-xs text-white/80 font-sans mt-1">
-                {isZh ? "* 从心轮静心起步，循序渐进的系统性修习" : "* Progressive syllabus starting from Heart Meditation foundation"}
+                {isZh ? "* 梵文真言、脉轮观想与调频呼吸的系统性修习" : "* Mantras, chakra visualization, and tuned breathwork"}
               </p>
             </div>
           </div>
@@ -93,17 +104,14 @@ export default function MeditationPage() {
 
       {/* 6-Level Visual Progression Roadmap */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 text-center max-w-2xl mx-auto">
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#B99C72] font-semibold">
-            CURRICULUM SYLLABUS
-          </span>
-          <h2 className="font-serif text-3xl sm:text-5xl text-[#2D233C] mt-1.5 font-normal">
-            {isZh ? "六阶段阶梯修习架构" : "Six Progressive Stages of Practice"}
+        <div className="mb-14 text-center max-w-3xl mx-auto">
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#2D233C] font-normal">
+            {isZh ? "I.S.G.A. 静坐 ［6个不同层级］ 修习法" : "I.S.G.A. Meditation — 6 Progressive Stages"}
           </h2>
-          <p className="text-xs sm:text-sm text-[#66616F] mt-2 font-sans">
+          <p className="text-xs sm:text-sm text-[#66616F] mt-3 font-sans leading-relaxed max-w-2xl mx-auto">
             {isZh
-              ? "点击下方卡片即可查看各阶段核心要点与开课要求。"
-              : "Explore the roadmap below to view curriculum highlights and prerequisites."}
+              ? "每一阶 将会协助你一步步的进步，有如一颗颗珍珠被串起来，形成一条漂亮的完整珍珠项链。这将支持习者的心智稳定，提升心灵，一步步强化高我的连接 以及 神性的合一。"
+              : "Each stage assists your progressive evolution, like pearls strung one by one into a magnificent necklace. This supports the practitioner's mental stability, elevates the soul, and steadily reinforces connection with the Higher Self and divine oneness."}
           </p>
         </div>
 

@@ -273,7 +273,7 @@ export default function AuraPremaPage() {
           <div
             className={`grid grid-cols-1 ${
               selectedCategory.items.length === 1
-                ? 'max-w-md mx-auto'
+                ? 'max-w-xl mx-auto'
                 : 'md:grid-cols-2 lg:grid-cols-3'
             } gap-8`}
           >
