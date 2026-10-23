@@ -286,8 +286,8 @@ export const contentData = {
           title: "第三课 · Atma Jyoti 内在能量结构与净化",
           subtitle: "",
           description: "延续第二课的锻炼，在第三课里你将会学习如何借由第八脉轮的灵性之光来安全的释放内在旧结构的清理。\n\n一步步支持你释放掉累世的印记，让你的光体得以变得轻盈，意识也随着开展。",
-          format: "封闭式密集修习",
-          prerequisite: "完成第二课修习并经导师核准",
+          format: "",
+          prerequisite: "",
         },
         {
           levelNumber: "04",
@@ -938,8 +938,8 @@ export const contentData = {
           title: "Lesson 03 · Atma Jyoti Internal Structure & Cleansing",
           subtitle: "Internal Structure & Deep Alignment",
           description: "Continuing the cultivation from Lesson 02, in Lesson 03 you will learn how to safely release and cleanse inner habitual structures via the spiritual radiance of the 8th chakra.\n\nStep by step supporting the dissolution of deep karmic imprints, allowing your light body to become light and clear as higher awareness unfolds.",
-          format: "Closed Intensive Workshop",
-          prerequisite: "Completion of Lesson 02 + Mentor Approval",
+          format: "",
+          prerequisite: "",
         },
         {
           levelNumber: "04",

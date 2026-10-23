@@ -44,31 +44,14 @@ export function BookingModal({ isOpen, onClose, defaultService }: BookingModalPr
       id: "rm444",
       price: "RM 444",
       duration: isZh ? "90 分钟" : "90 min",
-      title: isZh ? "天使灵性占卜 + ALT招牌源疗" : "Reading + ALT Light Therapy",
-      subtitle: isZh ? "标志性完整体验 · 对话梳理 + 原创能量对齐仪式" : "Signature experience · Guidance dialogue + ALT ritual",
-      isFeatured: true,
+      title: isZh ? "天使灵性占卜 + ALT 源疗" : "Reading + ALT Light Therapy",
+      subtitle: isZh ? "标志性完整体验 · 对话梳理 + 原创能量对齐" : "Signature experience · Guidance dialogue + ALT alignment",
       tier: "RM444",
-    },
-    {
-      id: "package",
-      price: isZh ? "私询定制" : "By Enquiry",
-      duration: isZh ? "3次连贯周期" : "3 Consecutive Sessions",
-      title: isZh ? "三次 ALT 连贯源疗计划" : "Three-Session ALT Journey",
-      subtitle: isZh ? "深层跟踪 · 阶段性持续梳理与身心觉察" : "Progressive spiritual reflection & continuous tracking",
-      tier: "Enquiry",
-    },
-    {
-      id: "custom",
-      price: isZh ? "免费私询" : "Direct Enquiry",
-      duration: isZh ? "课程 / 花晶 / 空间" : "Course / Essence / Space",
-      title: isZh ? "其他综合项目咨询" : "Courses & Products Inquiry",
-      subtitle: isZh ? "I.S.G.A 静坐课程、Aura Prema 花晶或 Access Chi 空间风水" : "I.S.G.A Meditation, Aura Prema Essence, or Access Chi Space",
-      tier: "Custom",
     },
   ];
 
   const [selectedService, setSelectedService] = useState<string>(
-    defaultService || (isZh ? "天使灵性占卜 + ALT招牌源疗 (RM444 / 90分钟)" : "Reading + ALT Light Therapy (RM444 / 90 min)")
+    defaultService || (isZh ? "天使灵性占卜 + ALT 源疗 (RM444 / 90分钟)" : "Reading + ALT Light Therapy (RM444 / 90 min)")
   );
   const [selectedMode, setSelectedMode] = useState<string>(
     isZh ? "Zoom 线上远程视频" : "Zoom Online Video"
@@ -201,32 +184,11 @@ export function BookingModal({ isOpen, onClose, defaultService }: BookingModalPr
           <label className="block text-xs font-mono font-semibold tracking-wider uppercase text-[#B99C72]">
             {isZh ? "02 / 期望进行方式" : "02 / Preferred Format"}
           </label>
-          <div className="grid grid-cols-2 gap-3 text-xs">
-            <button
-              type="button"
-              onClick={() => setSelectedMode(isZh ? "Zoom 线上远程视频" : "Zoom Online Video")}
-              className={`p-3 rounded-xl border text-center transition-all flex items-center justify-center gap-1.5 ${
-                selectedMode.includes("Zoom") || selectedMode.includes("线上")
-                  ? "bg-[#2D233C] text-white border-[#2D233C] shadow-xs"
-                  : "bg-[#FAF9F6] border-[#E8E3DD] text-[#554E5F] hover:bg-white"
-              }`}
-            >
+          <div className="text-xs">
+            <div className="p-3 rounded-xl border bg-[#2D233C] text-white border-[#2D233C] shadow-xs flex items-center justify-center gap-1.5">
               <Video className="w-3.5 h-3.5" />
-              <span>{isZh ? "Zoom 线上视频 (全球)" : "Online Video"}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setSelectedMode(isZh ? "巴生工作室面对面" : "Klang Studio In-Person")}
-              className={`p-3 rounded-xl border text-center transition-all flex items-center justify-center gap-1.5 ${
-                selectedMode.includes("巴生") || selectedMode.includes("Studio")
-                  ? "bg-[#2D233C] text-white border-[#2D233C] shadow-xs"
-                  : "bg-[#FAF9F6] border-[#E8E3DD] text-[#554E5F] hover:bg-white"
-              }`}
-            >
-              <MapPin className="w-3.5 h-3.5" />
-              <span>{isZh ? "巴生工作室面谈" : "Klang Studio"}</span>
-            </button>
+              <span>{isZh ? "Zoom 线上视频 (全球)" : "Zoom Online Video (Worldwide)"}</span>
+            </div>
           </div>
         </div>
 

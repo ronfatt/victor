@@ -46,33 +46,20 @@ export default function BookingPage() {
       price: "RM 444",
       tier: "RM444",
       duration: isZh ? "90 分钟" : "90 min",
-      title: isZh ? "天使灵性占卜 + ALT招牌源疗" : "Reading + ALT Light Therapy",
-      subtitle: isZh ? "标志性完整体验 · 深度对话 + 原创源疗仪式" : "Signature experience · Guidance dialogue + ALT ritual",
-      format: isZh ? "巴生工作室面谈（首选）/ Zoom 线上" : "Klang Studio (Recommended) / Zoom",
-      isFeatured: true,
+      title: isZh ? "天使灵性占卜 + ALT 源疗" : "Reading + ALT Light Therapy",
+      subtitle: isZh ? "标志性完整体验 · 深度对话 + 原创源疗" : "Signature experience · Guidance dialogue + ALT alignment",
+      format: isZh ? "Zoom 线上" : "Zoom Video",
       description: isZh
-        ? "完整旗舰体验：前半部深度对话与心念梳理，后半部进行老师原创专属 ALT 身心源疗仪式。"
-        : "Complete flagship session: In-depth guidance combined with Mikhael Victor's proprietary ALT alignment ritual.",
-    },
-    {
-      id: "package-inquiry",
-      price: isZh ? "私询定制" : "By Enquiry",
-      tier: "Enquiry",
-      duration: isZh ? "3次连贯周期" : "3 Consecutive Sessions",
-      title: isZh ? "三次 ALT 连贯源疗计划" : "Three-Session ALT Journey",
-      subtitle: isZh ? "深层跟踪 · 个性化阶段性修习与身心觉察" : "Progressive spiritual reflection & ongoing tracking",
-      format: isZh ? "巴生工作室专属安排" : "Klang Studio Tailored",
-      description: isZh
-        ? "专为需要阶段性持续跟进与深度对齐者提供，初次咨询后共同商定安排。"
-        : "A multi-stage continuous journey tailored after an initial consultation assessment.",
+        ? "完整体验：前半部深度对话与心念梳理，后半部进行老师原创专属 ALT 身心源疗。"
+        : "Complete session: In-depth guidance combined with Mikhael Victor's proprietary ALT alignment.",
     },
   ];
 
   const [selectedService, setSelectedService] = useState<string>(
-    isZh ? "天使灵性占卜 + ALT招牌源疗 (RM444 / 90分钟)" : "Reading + ALT Light Therapy (RM444 / 90 min)"
+    isZh ? "天使灵性占卜 + ALT 源疗 (RM444 / 90分钟)" : "Reading + ALT Light Therapy (RM444 / 90 min)"
   );
   const [selectedMode, setSelectedMode] = useState<string>(
-    isZh ? "巴生工作室面对面" : "Klang Studio In-Person"
+    isZh ? "Zoom 线上远程视频" : "Zoom Online Video"
   );
   const [clientName, setClientName] = useState("");
   const [copied, setCopied] = useState(false);
@@ -173,44 +160,17 @@ export default function BookingPage() {
               {isZh ? "02 / 选择咨询进行形式" : "02 / Preferred Format"}
             </span>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              <button
-                type="button"
-                onClick={() => setSelectedMode(isZh ? "巴生工作室面对面" : "Klang Studio In-Person")}
-                className={`p-4 rounded-xl border text-left transition-all flex items-center justify-between ${
-                  selectedMode.includes("巴生") || selectedMode.includes("Studio")
-                    ? "bg-[#2D233C] text-white border-[#2D233C] shadow-xs"
-                    : "bg-[#FAF9F6] border-[#E8E3DD] text-[#554E5F] hover:bg-white"
-                }`}
-              >
+            <div className="text-xs">
+              <div className="p-4 rounded-xl border bg-[#2D233C] text-white border-[#2D233C] shadow-xs flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#B99C72]" />
+                  <Video className="w-4 h-4 text-[#D9C3A3]" />
                   <div>
-                    <span className="font-medium block">{isZh ? "巴生工作室面对面" : "Klang Studio In-Person"}</span>
-                    <span className="text-[10px] opacity-75">{isZh ? "马来西亚雪兰莪 · 全预约制" : "Selangor, Malaysia · Appt Only"}</span>
-                  </div>
-                </div>
-                <span>{selectedMode.includes("巴生") ? "✓" : "○"}</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setSelectedMode(isZh ? "Zoom 线上远程视频" : "Zoom Online Video")}
-                className={`p-4 rounded-xl border text-left transition-all flex items-center justify-between ${
-                  selectedMode.includes("Zoom") || selectedMode.includes("线上")
-                    ? "bg-[#2D233C] text-white border-[#2D233C] shadow-xs"
-                    : "bg-[#FAF9F6] border-[#E8E3DD] text-[#554E5F] hover:bg-white"
-                }`}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Video className="w-4 h-4 text-[#B99C72]" />
-                  <div>
-                    <span className="font-medium block">{isZh ? "Zoom 线上视频远程" : "Zoom Online Video"}</span>
+                    <span className="font-medium block">{isZh ? "Zoom 线上视频远程 (全球)" : "Zoom Online Video (Worldwide)"}</span>
                     <span className="text-[10px] opacity-75">{isZh ? "全球华人及海外个案可用" : "Available Worldwide"}</span>
                   </div>
                 </div>
-                <span>{selectedMode.includes("Zoom") ? "✓" : "○"}</span>
-              </button>
+                <span>✓</span>
+              </div>
             </div>
           </div>
 

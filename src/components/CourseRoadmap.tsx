@@ -69,9 +69,6 @@ export function CourseRoadmap({ onSelectLevel }: CourseRoadmapProps) {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
                     />
-                    <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-black/60 text-[9px] font-mono text-white backdrop-blur-xs">
-                      {isZh ? "专属灵修法器" : "Sacred Instrument"}
-                    </span>
                   </div>
                 )}
 
