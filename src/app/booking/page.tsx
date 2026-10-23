@@ -13,10 +13,22 @@ import {
   AlertCircle
 } from 'lucide-react';
 
+interface BookingSessionOption {
+  id: string;
+  price: string;
+  tier: string;
+  duration: string;
+  title: string;
+  subtitle: string;
+  format: string;
+  description: string;
+  isFeatured?: boolean;
+}
+
 export default function BookingPage() {
   const { isZh } = useLanguage();
 
-  const sessionOptions = [
+  const sessionOptions: BookingSessionOption[] = [
     {
       id: "rm50",
       price: "RM 50",

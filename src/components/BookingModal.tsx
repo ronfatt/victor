@@ -20,10 +20,20 @@ interface BookingModalProps {
   defaultService?: string;
 }
 
+interface SessionOption {
+  id: string;
+  price: string;
+  duration: string;
+  title: string;
+  subtitle: string;
+  tier: string;
+  isFeatured?: boolean;
+}
+
 export function BookingModal({ isOpen, onClose, defaultService }: BookingModalProps) {
   const { isZh } = useLanguage();
 
-  const sessionOptions = [
+  const sessionOptions: SessionOption[] = [
     {
       id: "rm50",
       price: "RM 50",
