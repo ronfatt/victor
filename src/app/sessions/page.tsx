@@ -279,7 +279,6 @@ export default function SessionsPage() {
               <ul className="space-y-2.5 text-[#58535F] font-sans">
                 <li>• {isZh ? "一对一专属倾听与直觉卡牌象征性解读" : "Dedicated 1-on-1 dialogue & card archetype interpretations"}</li>
                 <li>• {isZh ? "梳理潜意识信念与盲点，多角度启发思考" : "Unpacking subconscious loops & fresh perspective shifts"}</li>
-                <li>• {isZh ? "ALT 方案提供老师原创专属静心仪式体验" : "Proprietary reflective ritual experience in RM444 session"}</li>
                 <li>• {isZh ? "咨询结束后的落地觉察与自省功课建议" : "Grounded post-session integration & contemplation ideas"}</li>
               </ul>
             </div>
@@ -294,7 +293,6 @@ export default function SessionsPage() {
                 <li>• {isZh ? "绝不提供临床精神科诊断或处方药物替代" : "Zero clinical psychiatric or medical diagnosis"}</li>
                 <li>• {isZh ? "不代作决定或宣称百分之百确定的宿命预知" : "No fatalistic fortune-telling or making decisions for you"}</li>
                 <li>• {isZh ? "RM50 及 RM200 咨询不包含任何 ALT 源疗仪式" : "RM50 & RM200 do NOT include ALT energy rituals"}</li>
-                <li>• {isZh ? "不包含任何附带巫术或迷信恐吓诱导" : "No occult curses, fear-based coercion or hidden upsells"}</li>
               </ul>
             </div>
           </div>

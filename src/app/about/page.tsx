@@ -337,28 +337,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Philosophy Callout */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[32px] bg-gradient-to-tr from-[#1E1729] via-[#2D233C] to-[#1E1729] text-white p-10 sm:p-16 text-center space-y-7 relative overflow-hidden">
-          <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#D9C3A3] font-semibold">
-            CORE MENTORING PHILOSOPHY
-          </span>
-          <h3 className="font-serif text-2xl sm:text-4xl lg:text-5xl max-w-3xl mx-auto leading-relaxed font-normal">
-            {isZh
-              ? "“真正的灵性不使人迷离恍惚，而是让你双脚踩在大地上，看清每一个选择。”"
-              : "“Authentic spirituality does not detach you from reality; it places your feet firmly on the earth to see every choice clearly.”"}
-          </h3>
-          <div className="pt-2 flex justify-center">
-            <button
-              type="button"
-              onClick={() => setBookingOpen(true)}
-              className="px-8 py-3.5 rounded-full bg-white text-[#2D233C] text-xs sm:text-sm font-medium hover:bg-[#FAF9F6] transition-colors shadow-sm"
-            >
-              {isZh ? "预约与老师面对面交流" : "Schedule a Private Dialogue"}
-            </button>
-          </div>
-        </div>
-      </section>
 
       <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
     </div>

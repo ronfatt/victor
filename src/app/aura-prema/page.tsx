@@ -38,7 +38,7 @@ export default function AuraPremaPage() {
         </div>
 
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#242129] font-normal leading-tight tracking-tight">
-          {isZh ? "Aura Prema 天使花晶与能量灵气瓶" : "Aura Prema Angelic Flower Essences & Reiki Bottles"}
+          {isZh ? "Aura Prema 天使花晶" : "Aura Prema Angelic Flower Essences"}
         </h1>
         <p className="mt-4 text-base sm:text-lg text-[#B99C72] font-serif italic tracking-wide max-w-2xl mx-auto">
           {isZh

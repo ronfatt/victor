@@ -376,35 +376,14 @@ export default function HomePage() {
                     <div className="lg:col-span-7 flex flex-col justify-between space-y-5">
                       <div>
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="font-mono text-xs text-[#ADA0BE] font-semibold tracking-wider">
-                            01 // FLAGSHIP DISCIPLINE
-                          </span>
                           <span className="px-3 py-0.5 rounded-full bg-white border border-[#E8E3DD] text-[10px] font-medium text-[#2D233C] shadow-2xs">
                             {srv.badge}
                           </span>
                         </div>
 
-                        <h3 className="font-serif text-3xl sm:text-4xl text-[#2D233C] font-normal group-hover:text-[#443659] transition-colors">
+                        <h3 className="font-serif text-3xl sm:text-4xl text-[#2D233C] font-normal group-hover:text-[#443659] transition-colors mb-5">
                           {srv.title}
                         </h3>
-                        <p className="text-xs font-mono uppercase tracking-wider text-[#B99C72] mt-1 mb-4">
-                          {srv.subtitle}
-                        </p>
-
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E3DD] text-[11px] font-sans text-[#2D233C]">
-                            <Sparkles className="w-3.5 h-3.5 text-[#B99C72]" />
-                            {isZh ? "1对1灵性卡牌占卜 (20/60 min)" : "1-on-1 Card Readings"}
-                          </span>
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E3DD] text-[11px] font-sans text-[#2D233C]">
-                            <SunMedium className="w-3.5 h-3.5 text-[#B99C72]" />
-                            {isZh ? "ALT 天使源疗深度仪式 (90 min)" : "Signature ALT Therapy"}
-                          </span>
-                        </div>
-
-                        <p className="text-xs sm:text-sm text-[#58535F] leading-relaxed mb-5 font-sans">
-                          {srv.description}
-                        </p>
 
                         {/* Features */}
                         <ul className="space-y-2 text-xs text-[#242129] font-sans">

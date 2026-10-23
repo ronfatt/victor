@@ -48,8 +48,8 @@ export default function AccessChiPage() {
 
             <p className="font-serif text-lg sm:text-xl text-[#B99C72] italic font-normal leading-relaxed">
               {isZh
-                ? "来自纯净的白光天使天堂 · 独创天使能量风水"
-                : "From the Pure White Light Angelic Realm · Proprietary Angelic Energy Feng Shui"}
+                ? "来自纯净的白光天使天堂 · 天使能量风水"
+                : "From the Pure White Light Angelic Realm · Angelic Energy Feng Shui"}
             </p>
 
             <div className="space-y-4 text-xs sm:text-sm text-[#58535F] leading-relaxed font-sans">
