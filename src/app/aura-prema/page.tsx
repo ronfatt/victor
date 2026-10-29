@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { BookingModal } from '@/components/BookingModal';
@@ -8,7 +8,8 @@ import { buildWhatsAppLink } from '@/config/siteConfig';
 import {
   Flower2,
   MessageSquare,
-  AlertCircle
+  AlertCircle,
+  Sparkles
 } from 'lucide-react';
 
 export default function AuraPremaPage() {
@@ -16,6 +17,18 @@ export default function AuraPremaPage() {
   const sec = t.auraSection;
   const [activeTab, setActiveTab] = useState<string>("sprays");
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [activeBottleIdx, setActiveBottleIdx] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace("#", "");
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get("tab") || hash;
+      if (tabParam && ["sprays", "reiki-bottles", "aura-shower", "jyoti"].includes(tabParam)) {
+        setActiveTab(tabParam);
+      }
+    }
+  }, []);
 
   const selectedCategory = sec.categories.find((c) => c.id === activeTab) || sec.categories[0];
 
@@ -241,133 +254,239 @@ export default function AuraPremaPage() {
           </p>
         </div>
 
-        {/* Triangle Rack Spotlight when viewing Reiki Bottles */}
-        {selectedCategory.id === 'reiki-bottles' && (
-          <div className="max-w-4xl mx-auto mb-12 p-6 sm:p-8 rounded-[28px] bg-white border border-[#E8E3DD] flex flex-col md:flex-row items-center gap-6 sm:gap-8 editorial-shadow-subtle">
-            <div className="relative w-full md:w-56 aspect-[4/3] rounded-2xl overflow-hidden bg-[#FAF9F6] shrink-0 border border-[#E8E3DD]">
-              <Image
-                src="/images/real_reiki_bottles.jpg"
-                alt="三角形架灵气瓶"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="space-y-2 text-center md:text-left">
-              <span className="text-[10px] font-mono tracking-widest text-[#B99C72] uppercase font-semibold block">
-                SACRED GEOMETRY DISPLAY // 14 FREQUENCIES
-              </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#2D233C] font-normal">
-                {isZh ? "经典神圣几何三角形架 · 14 款光波频率灵气瓶" : "Sacred Geometry Triangle Rack · 14 Frequency Flacons"}
-              </h3>
-              <p className="text-xs sm:text-sm text-[#66616F] font-sans leading-relaxed">
-                {isZh
-                  ? "以神圣几何三角形态陈列，汇聚自海底轮至顶轮与高阶意识的14种色彩精微振频，为个人气场与静坐空间提供深层共鸣与能量护持。"
-                  : "Arranged in sacred geometric alignment, synthesizing 14 optical and botanical frequencies from root to crown and transcendent realms."}
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Category Content: Items */}
+        {/* Category Content: Reiki Bottles Grid (Matrix with Hover) vs Standard Detailed Cards */}
         {selectedCategory.items && selectedCategory.items.length > 0 && (
-          <div
-            className={`grid grid-cols-1 ${
-              selectedCategory.items.length === 1
-                ? 'max-w-xl mx-auto'
-                : 'md:grid-cols-2 lg:grid-cols-3'
-            } gap-8`}
-          >
-            {selectedCategory.items.map((item, idx) => (
-              <div
-                key={idx}
-                className="group rounded-[24px] border border-[#E8E3DD] bg-white p-7 flex flex-col justify-between hover:border-[#ADA0BE] editorial-shadow-subtle hover:editorial-shadow-elevated transition-all duration-400"
-              >
-                <div>
-                  {/* Color Swatch & Volume Tag */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className="w-3.5 h-3.5 rounded-full border border-black/15 shadow-xs"
-                        style={{ backgroundColor: item.colorHex }}
-                      />
-                      <span className="text-xs font-medium text-[#2D233C] font-serif">
-                        {item.colorName}
-                      </span>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#8E8795] px-2.5 py-0.5 rounded-full bg-[#FAF9F6] border border-[#E8E3DD]">
-                      {item.volume}
-                    </span>
-                  </div>
+          selectedCategory.id === 'reiki-bottles' ? (
+            <div className="space-y-10">
+              {/* Interaction Hint */}
+              <div className="flex items-center justify-center gap-2 text-xs text-[#8E8795] font-sans">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B99C72] animate-pulse" />
+                <span>
+                  {isZh
+                    ? "将鼠标悬停在瓶身（或手机轻触）即可查看瓶子名称与对应色彩波长"
+                    : "Hover over or tap a bottle to reveal its name and color frequency"}
+                </span>
+              </div>
 
-                  {/* Real Studio Packshot Photo or Minimalist Flacon Cylinder */}
-                  {item.image ? (
-                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#FAF9F6] border border-[#E8E3DD] mb-5 group-hover:border-[#ADA0BE]/60 transition-colors">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-widest text-white/90 uppercase">
-                        REAL PACKSHOT
+              {/* 6-Column Catalogue Grid matching reference */}
+              <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+                {selectedCategory.items.map((item, idx) => {
+                  const isMobileActive = activeBottleIdx === idx;
+                  return (
+                    <div
+                      key={idx}
+                      onClick={() => setActiveBottleIdx(isMobileActive ? null : idx)}
+                      className={`group relative bg-white rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden aspect-[3/4] flex flex-col items-center justify-center cursor-pointer ${
+                        isMobileActive
+                          ? "border-[#2D233C] ring-2 ring-[#2D233C]/20 shadow-lg -translate-y-1"
+                          : "border-[#E8E3DD] hover:border-[#2D233C] hover:shadow-xl hover:-translate-y-1"
+                      }`}
+                    >
+                      {/* Sequence Index Number (01 - 14) */}
+                      <span className="absolute top-2 left-2 z-10 text-[10px] font-mono text-[#8E8795]/75 px-1.5 py-0.5 rounded-md bg-[#FAF9F6] border border-[#E8E3DD]/80">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+
+                      {/* Clean Bottle Display */}
+                      <div className="relative w-full h-full p-3 sm:p-4 flex items-center justify-center">
+                        {item.image ? (
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
+                            className="object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-300"
+                          />
+                        ) : (
+                          <div
+                            className="w-12 h-24 rounded-full shadow-md border border-white/60 flex items-center justify-center text-white text-[10px] font-serif"
+                            style={{
+                              background: `linear-gradient(180deg, rgba(255,255,255,0.7) 0%, ${item.colorHex} 40%, #2D233C 100%)`,
+                            }}
+                          >
+                            AP
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Mouse Roll-over (Hover) / Mobile Tap Overlay */}
+                      <div
+                        className={`absolute inset-0 bg-[#241F2A]/90 backdrop-blur-[2px] transition-all duration-200 flex flex-col items-center justify-center p-3 text-center text-white z-20 ${
+                          isMobileActive
+                            ? "opacity-100 pointer-events-auto"
+                            : "opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"
+                        }`}
+                      >
+                        {/* Color Swatch Dot */}
+                        <span
+                          className="w-4 h-4 rounded-full border border-white/60 shadow-xs mb-2 transition-transform group-hover:scale-110"
+                          style={{ backgroundColor: item.colorHex }}
+                        />
+
+                        {/* Bottle Name */}
+                        <h4 className="font-serif text-xs sm:text-sm font-medium text-white leading-tight">
+                          {item.name}
+                        </h4>
+
+                        {/* Bottle Color */}
+                        <p className="text-[11px] font-sans text-[#E0D3C1] mt-1 font-medium">
+                          {item.colorName}
+                        </p>
+
+                        {/* Volume */}
+                        <span className="text-[9px] font-mono text-white/60 mt-1 uppercase tracking-widest">
+                          {item.volume || "30ml"}
+                        </span>
+
+                        {/* Direct Inquire Link */}
+                        <a
+                          href={buildWhatsAppLink(
+                            `Aura Prema 灵气瓶结缘咨询: ${item.name} (${item.colorName})`,
+                            undefined,
+                            undefined,
+                            undefined,
+                            undefined,
+                            isZh
+                          )}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="mt-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/20 hover:bg-[#25D366] text-white text-[10px] font-sans font-medium transition-colors shadow-xs"
+                        >
+                          <MessageSquare className="w-3 h-3 fill-current" />
+                          <span>{isZh ? "私询结缘" : "Inquire"}</span>
+                        </a>
                       </div>
                     </div>
-                  ) : (
-                    <div className="aspect-[4/3] rounded-2xl bg-gradient-to-b from-[#F7F3EE] via-[#EFEAE5] to-[#E2DCE0] border border-[#E8E3DD] flex flex-col items-center justify-center p-6 mb-5 relative overflow-hidden group-hover:border-[#ADA0BE]/60 transition-colors">
-                      {/* Subtle Refraction Halo Behind Bottle */}
-                      <div
-                        className="absolute w-24 h-24 rounded-full blur-xl opacity-35"
-                        style={{ backgroundColor: item.colorHex }}
-                      />
+                  );
+                })}
+              </div>
 
-                      {/* Minimalist Flacon Cylinder */}
-                      <div className="relative z-10 flex flex-col items-center">
-                        <div className="w-4 h-3 rounded-t-xs bg-[#B99C72] border-b border-black/10" />
-                        <div className="w-3 h-1.5 bg-[#E8E3DD]" />
-                        <div
-                          className="w-10 h-24 rounded-t-sm rounded-b-md shadow-md border border-white/60 flex items-center justify-center text-white text-[10px] font-serif tracking-widest relative overflow-hidden"
-                          style={{
-                            background: `linear-gradient(180deg, rgba(255,255,255,0.7) 0%, ${item.colorHex} 40%, #2D233C 100%)`,
-                          }}
-                        >
-                          <span className="opacity-80">AP</span>
+              {/* Consultation Callout */}
+              <div className="mt-12 text-center p-6 sm:p-8 rounded-[24px] bg-white border border-[#E8E3DD] max-w-xl mx-auto space-y-3.5 editorial-shadow-subtle">
+                <p className="text-xs sm:text-sm text-[#4A4553] font-sans leading-relaxed">
+                  {isZh
+                    ? "14 款色彩光波灵气瓶（每瓶 30ml），内含高频天然精油、花精与色彩天使共振波长，支持个人气场归位与以太体、星光体深层调和。"
+                    : "14 color frequencies (30ml each), harmonizing the human auric field, etheric and astral bodies through botanical and color angelic resonance."}
+                </p>
+                <a
+                  href={buildWhatsAppLink(
+                    "Aura Prema: 14款灵气瓶全套咨询与挑选结缘",
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    isZh
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#2D233C] text-white text-xs font-medium hover:bg-[#B99C72] transition-colors shadow-xs"
+                >
+                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <span>{isZh ? "WhatsApp 咨询整套或挑选灵气瓶" : "Inquire via WhatsApp"}</span>
+                </a>
+              </div>
+            </div>
+          ) : (
+            <div
+              className={`grid grid-cols-1 ${
+                selectedCategory.items.length === 1
+                  ? 'max-w-xl mx-auto'
+                  : 'md:grid-cols-2 lg:grid-cols-3'
+              } gap-8`}
+            >
+              {selectedCategory.items.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="group rounded-[24px] border border-[#E8E3DD] bg-white p-7 flex flex-col justify-between hover:border-[#ADA0BE] editorial-shadow-subtle hover:editorial-shadow-elevated transition-all duration-400"
+                >
+                  <div>
+                    {/* Color Swatch & Volume Tag */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="flex items-center gap-2.5">
+                        <span
+                          className="w-3.5 h-3.5 rounded-full border border-black/15 shadow-xs"
+                          style={{ backgroundColor: item.colorHex }}
+                        />
+                        <span className="text-xs font-medium text-[#2D233C] font-serif">
+                          {item.colorName}
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-mono text-[#8E8795] px-2.5 py-0.5 rounded-full bg-[#FAF9F6] border border-[#E8E3DD]">
+                        {item.volume}
+                      </span>
+                    </div>
+
+                    {/* Real Studio Packshot Photo or Minimalist Flacon Cylinder */}
+                    {item.image ? (
+                      <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#FAF9F6] border border-[#E8E3DD] mb-5 group-hover:border-[#ADA0BE]/60 transition-colors">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-widest text-white/90 uppercase">
+                          REAL PACKSHOT
                         </div>
                       </div>
+                    ) : (
+                      <div className="aspect-[4/3] rounded-2xl bg-gradient-to-b from-[#F7F3EE] via-[#EFEAE5] to-[#E2DCE0] border border-[#E8E3DD] flex flex-col items-center justify-center p-6 mb-5 relative overflow-hidden group-hover:border-[#ADA0BE]/60 transition-colors">
+                        {/* Subtle Refraction Halo Behind Bottle */}
+                        <div
+                          className="absolute w-24 h-24 rounded-full blur-xl opacity-35"
+                          style={{ backgroundColor: item.colorHex }}
+                        />
 
-                      <span className="absolute bottom-2.5 text-[8.5px] uppercase font-mono tracking-widest text-[#8E8795]/80">
-                        FLACON SPEC // {item.volume}
-                      </span>
-                    </div>
-                  )}
+                        {/* Minimalist Flacon Cylinder */}
+                        <div className="relative z-10 flex flex-col items-center">
+                          <div className="w-4 h-3 rounded-t-xs bg-[#B99C72] border-b border-black/10" />
+                          <div className="w-3 h-1.5 bg-[#E8E3DD]" />
+                          <div
+                            className="w-10 h-24 rounded-t-sm rounded-b-md shadow-md border border-white/60 flex items-center justify-center text-white text-[10px] font-serif tracking-widest relative overflow-hidden"
+                            style={{
+                              background: `linear-gradient(180deg, rgba(255,255,255,0.7) 0%, ${item.colorHex} 40%, #2D233C 100%)`,
+                            }}
+                          >
+                            <span className="opacity-80">AP</span>
+                          </div>
+                        </div>
 
-                  <h3 className="font-serif text-xl text-[#2D233C] font-normal leading-snug">
-                    {item.name}
-                  </h3>
+                        <span className="absolute bottom-2.5 text-[8.5px] uppercase font-mono tracking-widest text-[#8E8795]/80">
+                          FLACON SPEC // {item.volume}
+                        </span>
+                      </div>
+                    )}
 
-                  <p className="text-[11px] text-[#B99C72] font-mono tracking-wide mt-1 mb-2.5">
-                    {item.theme}
-                  </p>
+                    <h3 className="font-serif text-xl text-[#2D233C] font-normal leading-snug">
+                      {item.name}
+                    </h3>
 
-                  <p className="text-xs text-[#66616F] leading-relaxed font-sans whitespace-pre-line">
-                    {item.description}
-                  </p>
+                    <p className="text-[11px] text-[#B99C72] font-mono tracking-wide mt-1 mb-2.5">
+                      {item.theme}
+                    </p>
+
+                    <p className="text-xs text-[#66616F] leading-relaxed font-sans whitespace-pre-line">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-7 pt-4 border-t border-[#E8E3DD]/70">
+                    <a
+                      href={buildWhatsAppLink(`Aura Prema: ${item.name} (${item.colorName})`, undefined, undefined, undefined, undefined, isZh)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-xs font-medium text-[#1E7E34] hover:bg-[#25D366] hover:text-white transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                    >
+                      <MessageSquare className="w-3.5 h-3.5 fill-current" />
+                      <span>{isZh ? "WhatsApp 询问库存与结缘" : "Inquire via WhatsApp"}</span>
+                    </a>
+                  </div>
                 </div>
-
-                <div className="mt-7 pt-4 border-t border-[#E8E3DD]/70">
-                  <a
-                    href={buildWhatsAppLink(`Aura Prema: ${item.name} (${item.colorName})`, undefined, undefined, undefined, undefined, isZh)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-xs font-medium text-[#1E7E34] hover:bg-[#25D366] hover:text-white transition-all flex items-center justify-center gap-1.5 shadow-2xs"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5 fill-current" />
-                    <span>{isZh ? "WhatsApp 询问库存与结缘" : "Inquire via WhatsApp"}</span>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )
         )}
       </section>
 
